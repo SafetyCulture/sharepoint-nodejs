@@ -1,5 +1,5 @@
 {
-  "name": "sharepoint-nodejs",
+  "name": "sharepoint",
   "version": "0.0.1",
   "description": "SharePoint client library",
   "main": "lib/index.js",
@@ -7,6 +7,7 @@
     "start": "node lib/index",
     "lint": "./node_modules/.bin/eslint src/ test/",
     "test": "npm run lint && BABEL_ENV=TEST mocha --compilers js:babel-core/register",
+    "coverage": "BABEL_ENV=TEST babel-node node_modules/isparta/bin/isparta cover --report text --report html node_modules/mocha/bin/_mocha -- --reporter dot",
     "compile": "babel --presets es2015 -d lib/ src/",
     "prepublish": "npm run compile"
   },
@@ -16,25 +17,32 @@
   },
   "keywords": [],
   "author": "Nick Matenaar <nick@prismatik.com.au>",
-  "license": "Apache 2",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/SafetyCulture/sharepoint-nodejs/issues"
   },
   "homepage": "https://github.com/SafetyCulture/sharepoint-nodejs",
   "devDependencies": {
+    "ansi-regex": "^2.0.0",
     "babel-cli": "^6.3.0",
     "babel-eslint": "^5.0.0-beta6",
+    "babel-plugin-add-module-exports": "^0.1.2",
     "babel-plugin-rewire": "^1.0.0-beta-3",
     "babel-preset-es2015": "^6.3.13",
     "chai": "^3.2.0",
     "eslint": "^1.10.3",
+    "isparta": "^4.0.0",
+    "istanbul": "^0.4.2",
+    "left-pad": "^0.0.4",
     "mocha": "^2.1.0",
     "nock": "^2.18.2",
     "rewire": "^2.4.0",
-    "left-pad": "^0.0.4",
-    "ansi-regex": "^2.0.0",
     "sinon": "^1.12.2",
     "sinon-chai": "^2.7.0"
+  },
+  "babelBoilerplateOptions": {
+    "entryFileName": "index",
+    "mainVarName": "SharePoint"
   },
   "dependencies": {
     "axios": "^0.8.1",
@@ -49,8 +57,10 @@
     "lodash": "^3.10.1",
     "moment": "^2.11.1",
     "node-uuid": "^1.4.7",
+    "request-promise": "^2.0.1",
     "required_env": "^1.0.0",
     "sharepoint-auth": "^1.0.3",
-    "xml2js": "^0.4.15"
+    "xml2js": "^0.4.15",
+    "xml2json": "^0.9.0"
   }
 }

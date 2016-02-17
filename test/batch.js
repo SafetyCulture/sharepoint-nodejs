@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import nock from 'nock';
-const spbAPIRewire = require('../../src/SharePoint/batchApi');
-const SharePointBatchAPI = spbAPIRewire;
+const spbAPIRewire = require('../src/batch');
+const Batch = spbAPIRewire.Batch;
 const host = 'https://ohaiprismatik.sharepoint.com/wut';
 const batchEndpoint = `/_api/$batch`;
 const mockedAuth = { FedAuth: '123', rtFa: '123', requestDigest: '123' };
 
-describe('SharePointBatchAPI-Mocked', function test() {
+describe('Batch-Mocked', function test() {
   this.timeout(40000);
 
   before(() => {
@@ -23,17 +23,17 @@ describe('SharePointBatchAPI-Mocked', function test() {
   describe('when configured incorrectly', () => {
     it('should error on instantiation without host', () => {
       try {
-        return new SharePointBatchAPI();
+        return new Batch();
       } catch (e) {
-        expect(e.message).to.equal('SharePointBatchAPI requires host string');
+        expect(e.message).to.equal('Batch requires host string');
       }
     });
 
     it('should error on instantiation without auth', () => {
       try {
-        return new SharePointBatchAPI(host);
+        return new Batch(host);
       } catch (e) {
-        expect(e.message).to.equal('SharePointBatchAPI requires auth object');
+        expect(e.message).to.equal('Batch requires auth object');
       }
     });
   });
@@ -42,7 +42,7 @@ describe('SharePointBatchAPI-Mocked', function test() {
     let sp;
 
     beforeEach(() => {
-      sp = new SharePointBatchAPI(host, mockedAuth);
+      sp = new Batch(host, mockedAuth);
     });
 
     afterEach(() => {
@@ -81,7 +81,7 @@ describe('SharePointBatchAPI-Mocked', function test() {
     describe('#run', () => {
       it('should batch requests and send to sharepoint', () => {
         const expectedResult =
-          `--batch_1\r\nContent-Type: multipart/mixed; boundary=changeset_1\r\nHost: ohaiprismatik.sharepoint.com\r\nContent-Length: 345\r\nContent-Transfer-Encoding: binary\r\n\r\n--changeset_1\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nPOST https://ohaiprismatik.sharepoint.com/wut/_api/web/lists HTTP/1.1\r\nContent-Type: application/json;odata=verbose\r\n\r\n{"__metadata":{"type":"SP.List"},"AllowContentTypes":true,"BaseTemplate":100,"ContentTypesEnabled":true,"Description":"test","Title":"test"}\r\n\r\n--changeset_1--\r\n\r\n--batch_1\r\nContent-Type: multipart/mixed; boundary=changeset_1\r\nHost: ohaiprismatik.sharepoint.com\r\nContent-Length: 298\r\nContent-Transfer-Encoding: binary\r\n\r\n--changeset_1\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nPOST https://ohaiprismatik.sharepoint.com/wut/_api/web/lists/getbytitle('test')/fields HTTP/1.1\r\nContent-Type: application/json;odata=verbose\r\n\r\n{"__metadata":{"type":"SP.Field"},"Title":"test","FieldTypeKind":1}\r\n\r\n--changeset_1--\r\n\r\n--batch_1--`;
+          `--batch_1\r\nContent-Type: multipart/mixed; boundary=changeset_1\r\nHost: ohaiprismatik.sharepoint.com\r\nContent-Length: 345\r\nContent-Transfer-Encoding: binary\r\n\r\n--changeset_1\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nPOST https://ohaiprismatik.sharepoint.com/wut/_api/web/lists HTTP/1.1\r\nContent-Type: application/json;odata=verbose\r\n\r\n{"__metadata":{"type":"SP.List"},"AllowContentTypes":true,"BaseTemplate":100,"ContentTypesEnabled":true,"Description":"test","Title":"test"}\r\n\r\n--changeset_1--\r\n\r\n--batch_1\r\nContent-Type: multipart/mixed; boundary=changeset_1\r\nHost: ohaiprismatik.sharepoint.com\r\nContent-Length: 298\r\nContent-Transfer-Encoding: binary\r\n\r\n--changeset_1\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nPOST https://ohaiprismatik.sharepoint.com/wut/_api/web/lists/GetByTitle('test')/fields HTTP/1.1\r\nContent-Type: application/json;odata=verbose\r\n\r\n{"__metadata":{"type":"SP.Field"},"Title":"test","FieldTypeKind":1}\r\n\r\n--changeset_1--\r\n\r\n--batch_1--`;
 
         sp.createList('test', 'test', { 'test': 1 });
 
@@ -240,7 +240,7 @@ describe('SharePointBatchAPI-Mocked', function test() {
 
     describe('#getList', () => {
       it('should add a changeset that gets a list', () => {
-        const getRequest = `GET ${host}/_api/web/lists/getbytitle(\'test\')`;
+        const getRequest = `GET ${host}/_api/web/lists/GetByTitle(\'test\')`;
 
         sp.getList('test');
 
@@ -272,7 +272,7 @@ describe('SharePointBatchAPI-Mocked', function test() {
       it('should return a function that generates the right request', () => {
         const fn = sp.deleteListItem('test', 1);
         const result = fn('test');
-        expect(result).to.include(`DELETE ${host}/_api/web/lists/getbytitle('test')/items(1)`);
+        expect(result).to.include(`DELETE ${host}/_api/web/lists/GetByTitle('test')/items(1)`);
       });
     });
   });

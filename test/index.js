@@ -1,205 +1,185 @@
 import { expect } from 'chai';
 import nock from 'nock';
-const spRewire = require('../../src/sharepoint/index');
-const SharePoint = spRewire.default;
-import { format, title } from '../utils';
 
-const username = 'testusername';
-const password = 'testpassword';
+const spAPIRewire = require('../src/index');
+const SharePoint = spAPIRewire.SharePoint;
+
+import { listURI as title } from '../src/lists';
+import { format } from './utils';
+
 const host = 'https://ohaiprismatik.sharepoint.com/wut';
-const batchEndpoint = `/_api/$batch`;
+const mockedAuth = { FedAuth: '123', rtFa: '123', requestDigest: '123' };
 
-describe('SharePoint-Mock', function test() {
+describe('SharePoint-Mocked', function test() {
   this.timeout(40000);
 
-  before(() => {
-    // mock spAuth to always log in
-    spRewire.__Rewire__('spAuth', (opts, fn) => fn(null, {
-      cookies: {
-        FedAuth: '123',
-        rtFa: '123'
-      },
-      requestDigest: '123'
-    }));
-  });
-
-  after(() => {
-    spRewire.__ResetDependency__('spAuth');
-  });
-
-  describe('#ensureLists', () => {
-    it('should set ensured to true if both lists exist', () => {
-      const sp = new SharePoint({ username, password, host });
-
-      nock(host)
-        .post(batchEndpoint)
-        .reply(200, '');
-
-      return sp.ensureLists()
-      .then(() => {
-        expect(sp.ensured).to.be.true;
-      });
+  describe('when configured incorrectly', () => {
+    it('should error on instantiation without host', () => {
+      try {
+        return new SharePoint();
+      } catch (e) {
+        expect(e.message).to.equal('SharePoint requires host string');
+      }
     });
 
-    const exampleResponseNotFound =
-      `--batchresponse_4cc2e5b3-bf5b-42d7-9de3-9a381313d178
-      Content-Type: application/http
-      Content-Transfer-Encoding: binary
-
-      HTTP/1.1 404 ERROR
-      CONTENT-TYPE: application/json;odata=verbose;charset=utf-8
-
-      {"error":{"message": "does not exist"}}
-
-      --batchresponse_4cc2e5b3-bf5b-42d7-9de3-9a381313d178
-      Content-Type: application/http
-      Content-Transfer-Encoding: binary
-
-      HTTP/1.1 200 OK
-      CONTENT-TYPE: application/json;odata=verbose;charset=utf-8
-
-      {"d":{"__metadata":{"id":"2"}}}
-      --batchresponse_4cc2e5b3-bf5b-42d7-9de3-9a381313d178--`;
-
-    const exampleCreateResponse =
-      `--batchresponse_4cc2e5b3-bf5b-42d7-9de3-9a381313d178
-      Content-Type: application/http
-      Content-Transfer-Encoding: binary
-
-      HTTP/1.1 200 OK
-      CONTENT-TYPE: application/json;odata=verbose;charset=utf-8
-
-      { "entry": { "category": [ {"$": { "term": "SP.List" } } ] } }
-
-      --batchresponse_4cc2e5b3-bf5b-42d7-9de3-9a381313d178
-      Content-Type: application/http
-      Content-Transfer-Encoding: binary
-
-      HTTP/1.1 200 OK
-      CONTENT-TYPE: application/json;odata=verbose;charset=utf-8
-
-      { "entry": { "category": [ {"$": { "term": "SP.List" } } ], "content": [{"m:properties": [{"d:Id": [{"_": 1}]}]}] } }
-      --batchresponse_4cc2e5b3-bf5b-42d7-9de3-9a381313d178--`;
-
-    it('should create lists if they do not exist, and link them', () => {
-      const auditsList = 'SafetyCulture Audits';
-      const sp = new SharePoint({ username, password, host });
-
-      nock(host)
-        // Query
-        .post(batchEndpoint)
-        .reply(200, exampleResponseNotFound)
-        // CreateLists
-        .post(batchEndpoint)
-        .reply(200, exampleCreateResponse)
-        .post(format(title(auditsList) + '/fields/addfield'), {
-          'parameters': {
-            '__metadata': { 'type': 'SP.FieldCreationInformation' },
-            'Title': 'Items',
-            'FieldTypeKind': 7,
-            'LookupListId': 1,
-            'LookupFieldName': 'Item_x0020_Id'
-          }
-        })
-        .reply(200, { d: { Id: 1 } })
-        .post(format(title(auditsList) + `/fields('1')`), {
-          '__metadata': { 'type': 'SP.FieldLookup' },
-          'AllowMultipleValues': true
-        })
-        .reply(200);
-
-
-      return sp.ensureLists()
-      .then(() => {
-        expect(nock.isDone()).to.be.true;
-      });
-    });
-
-    it('custom list name', () => {
-      const auditsList = 'QA Results';
-      const sp = new SharePoint({ username, password, host, auditsList });
-
-      nock(host)
-        // Query
-        .post(batchEndpoint)
-        .reply(200, exampleResponseNotFound)
-        // CreateLists
-        .post(batchEndpoint)
-        .reply(200, exampleCreateResponse)
-        .post(format(title(auditsList) + '/fields/addfield'), {
-          'parameters': {
-            '__metadata': { 'type': 'SP.FieldCreationInformation' },
-            'Title': 'Items',
-            'FieldTypeKind': 7,
-            'LookupListId': 1,
-            'LookupFieldName': 'Item_x0020_Id'
-          }
-        })
-        .reply(200, { d: { Id: 1 } })
-        .post(format(title(auditsList) + `/fields('1')`), {
-          '__metadata': { 'type': 'SP.FieldLookup' },
-          'AllowMultipleValues': true
-        })
-        .reply(200);
-
-
-      return sp.ensureLists()
-      .then(() => {
-        expect(nock.isDone()).to.be.true;
-      });
+    it('should error on instantiation without auth', () => {
+      try {
+        return new SharePoint(host);
+      } catch (e) {
+        expect(e.message).to.equal('SharePoint requires auth object');
+      }
     });
   });
 
-  describe('#createOrUpdate', () => {
-    // Assume lists ensured
-    let sp = new SharePoint({ username, password, host });
-    const auditsList = 'SafetyCulture Audits';
-    sp.ensured = true;
+  describe('when configured correctly', () => {
+    const sp = new SharePoint(host, mockedAuth);
 
-    it('should upload an audit with items to SharePoint', () => {
-      const testAudit = { 'Audit Id': 1 };
-      const testItem = { 'Item Id': 1 };
+    afterEach(() => {
+      nock.cleanAll();
+    });
 
+    it('should config the url correctly on any request', () => {
       nock(host)
-        .get(format(title(auditsList) + `/items?$filter=Audit_x0020_Id eq '1'`))
-        .reply(200, { d: { results: [] } })
-        // Create items
-        .post(batchEndpoint)
-        .reply(200)
-        // Create audit
-        .post(batchEndpoint)
-        .reply(200);
+          .get(format(title('dogs') + '/items?'))
+          .reply(200, { d: { } });
 
-      return sp.createOrUpdate(testAudit, [testItem])
+
+      return sp.getListItems('dogs')
       .then(() => {
         expect(nock.isDone()).to.be.true;
       });
     });
 
-    it('should delete an audit and items on SharePoint if they already exist', () => {
-      const testAudit = { 'Audit Id': 1 };
-      const testItem = { 'Item Id': 1 };
+    it('should config the headers correctly on any request', () => {
+      nock(host, {
+        reqheaders: {
+          'Cookie': 'FedAuth=123;rtFa=123;',
+          'X-RequestDigest': '123',
+          'Accept': 'application/json;odata=verbose',
+          'Content-Type': 'application/json;odata=verbose'
+        }
+      })
+      .get(format(title('test') + '/items?'))
+      .reply(200, { d: {} });
 
-      nock(host)
-        .get(format(title(auditsList) + `/items?$filter=Audit_x0020_Id eq '1'`))
-        .reply(200, { d: { results: [ { Id: 1, ItemsId: { results: [1] } } ] } })
-        // the item delete
-        .post(batchEndpoint)
-        .reply(200)
-        // the audit delete
-        .post(batchEndpoint)
-        .reply(200)
-        // Create items
-        .post(batchEndpoint)
-        .reply(200)
-        // Create audit
-        .post(batchEndpoint)
-        .reply(200);
-
-      return sp.createOrUpdate(testAudit, [testItem])
+      return sp.getListItems('test')
       .then(() => {
         expect(nock.isDone()).to.be.true;
       });
+    });
+
+    describe('#linkLists', () => {
+      it('should link two lists', () => {
+        const fieldName = 'test';
+        const lookupListId = 'aaaa-bbbb-cccc';
+        const lookupFieldName = 'Some Field';
+
+        nock(host)
+          .post(format(title('test') + '/fields/addfield'), {
+            'parameters': {
+              '__metadata': { 'type': 'SP.FieldCreationInformation' },
+              'Title': fieldName,
+              'FieldTypeKind': 7,
+              'LookupListId': lookupListId,
+              'LookupFieldName': lookupFieldName.replace(/ /g, '_x0020_')
+            }
+          })
+          .reply(200, { d: { Id: 1 } });
+
+        return sp.linkLists('test', lookupListId, fieldName, lookupFieldName, false)
+        .then(() => {
+          expect(nock.isDone()).to.be.true;
+        });
+      });
+
+      it('should link two lists with multiple values', () => {
+        const fieldName = 'test';
+        const lookupListId = 'aaaa-bbbb-cccc';
+        const lookupFieldName = 'Some Field';
+
+        nock(host)
+          .post(format(title('test') + '/fields/addfield'), {
+            'parameters': {
+              '__metadata': { 'type': 'SP.FieldCreationInformation' },
+              'Title': fieldName,
+              'FieldTypeKind': 7,
+              'LookupListId': lookupListId,
+              'LookupFieldName': lookupFieldName.replace(/ /g, '_x0020_')
+            }
+          })
+          .reply(200, { d: { Id: 1 } })
+          .post(format(`${title('test')}/fields('1')`), {
+            '__metadata': { 'type': 'SP.FieldLookup' },
+            'AllowMultipleValues': true
+          })
+          .reply(200);
+
+        return sp.linkLists('test', lookupListId, fieldName, lookupFieldName, true)
+        .then(() => {
+          expect(nock.isDone()).to.be.true;
+        });
+      });
+    });
+
+    describe('#getListItems', () => {
+      it('should return all list items', () => {
+        const testItems = [
+          { id: 1 },
+          { id: 2 }
+        ];
+
+        nock(host)
+          .get(format(title('test') + '/items?'))
+          .reply(200, { d: { results: testItems } });
+
+        return sp.getListItems('test')
+        .then(items => {
+          expect(items).to.deep.equal(testItems);
+          expect(nock.isDone()).to.be.true;
+        });
+      });
+
+      it('should return all filtered list items', () => {
+        const testItems = [
+          { id: 1 }
+        ];
+
+        nock(host)
+          .get(format(`${title('test')}/items?$filter=id eq '1'`))
+          .reply(200, { d: { results: testItems } });
+
+        return sp.getListItems('test', { where: { id: 1 } })
+        .then(items => {
+          expect(items).to.deep.equal(testItems);
+          expect(nock.isDone()).to.be.true;
+        });
+      });
+    });
+  });
+
+  describe('#formatResponse', () => {
+    const formatResponse = spAPIRewire.__GetDependency__('formatResponse');
+
+    it('should replace all "_x0020_" in a response with spaces', () => {
+      const response = {
+        Test_x0020_Field: 'test',
+        Test_x0020_Array: [
+          { Test_x0020_Item: 'test'}
+        ],
+        Test_x0020_Object: {
+          test: 'test'
+        }
+      };
+
+      const expectedResult = {
+        'Test Field': 'test',
+        'Test Array': [
+          { 'Test Item': 'test' }
+        ],
+        'Test Object': { test: 'test' }
+      };
+
+      expect(formatResponse(response)).to.deep.equal(expectedResult);
     });
   });
 });
