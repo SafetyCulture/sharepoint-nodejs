@@ -1,0 +1,18 @@
+{
+  "__metadata": { "type": "SP.Data.SafetyCulture_x0020_ItemsListItem" },
+  "Item Id": "df4b4553-2549-42ee-ab0b-cea4e063cae1",
+  "Title": "Question One",
+  "Label": "Question One",
+  "Type": "question",
+  "Score": 1,
+  "Max Score": 1,
+  "Percentage": 100,
+  "O Weighting": 1,
+  "R Id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+  "R Type": "text",
+  "R Label": "Yes",
+  "R Short Label": "Y",
+  "R Colour": "162,182,58",
+  "R Enable Score": true,
+  "R Score": 1
+}

@@ -1,0 +1,2759 @@
+{
+  "template_id": "template_eab843f25bb24c73b33a44768b249c67",
+  "audit_id": "audit_bf885775e4364ca4be1c1c044cc67d11",
+  "created_at": "2015-09-19T04:08:16.382Z",
+  "modified_at": "2015-09-19T04:08:16.382Z",
+  "audit_data": {
+    "score": 178,
+    "total_score": 331,
+    "score_percentage": 53.776,
+    "name": "Halting Organ Audit",
+    "duration": 0,
+    "authorship": {
+      "device_id": "user_ce267679907a40d3a863aee1a5544c9f",
+      "owner": "Nicholas Matenaar",
+      "author": "Nicholas Matenaar"
+    },
+    "date_completed": null,
+    "date_modified": "2015-09-19T04:08:16.382Z",
+    "date_started": "2015-09-19T04:08:16.382Z"
+  },
+  "template_data": {
+    "authorship": {
+      "device_id": "user_ce267679907a40d3a863aee1a5544c9f",
+      "owner": "Nicholas Matenaar",
+      "author": "Nicholas Matenaar"
+    },
+    "metadata": {
+      "description": "",
+      "name": "Unkenned Eggnog Inspection"
+    },
+    "response_sets": {
+      "86f2c450-67fa-11e5-86cf-5ddafd1a2b79": {
+        "id": "86f2c450-67fa-11e5-86cf-5ddafd1a2b79",
+        "responses": [
+          {
+            "id": "86f2c451-67fa-11e5-86cf-5ddafd1a2b79",
+            "colour": "0,201,8",
+            "label": "coach",
+            "score": 1,
+            "short_label": "halibut",
+            "type": "text",
+            "enable_score": true
+          },
+          {
+            "id": "86f4e730-67fa-11e5-86cf-5ddafd1a2b79",
+            "colour": "207,0,0",
+            "label": "self",
+            "score": 0,
+            "short_label": "glove",
+            "type": "text",
+            "enable_score": true
+          }
+        ],
+        "type": "list"
+      }
+    }
+  },
+  "header_items": [
+    {
+      "item_id": "10E39E36-B1EE-4E22-BCB1-F358E8AE7151",
+      "label": "Information",
+      "type": "section",
+      "children": [
+        "f3245d40-ea77-11e1-aff1-0800200c9a66",
+        "f3245d46-ea77-11e1-aff1-0800200c9a66",
+        "f3245d41-ea77-11e1-aff1-0800200c9a66",
+        "f3245d42-ea77-11e1-aff1-0800200c9a66",
+        "f3245d43-ea77-11e1-aff1-0800200c9a66",
+        "f3245d44-ea77-11e1-aff1-0800200c9a66",
+        "f3245d45-ea77-11e1-aff1-0800200c9a66"
+      ]
+    },
+    {
+      "parent_id": "10E39E36-B1EE-4E22-BCB1-F358E8AE7151",
+      "item_id": "f3245d40-ea77-11e1-aff1-0800200c9a66",
+      "label": "Audit Title",
+      "type": "textsingle",
+      "responses": {
+        "text": "Et officiis voluptatem voluptatem assumenda non sunt. Temporibus nam asperiores vero et. Dolorem dolor quae corporis."
+      }
+    },
+    {
+      "parent_id": "10E39E36-B1EE-4E22-BCB1-F358E8AE7151",
+      "item_id": "f3245d46-ea77-11e1-aff1-0800200c9a66",
+      "label": "Document No.",
+      "type": "textsingle",
+      "responses": {
+        "text": 397051
+      }
+    },
+    {
+      "parent_id": "10E39E36-B1EE-4E22-BCB1-F358E8AE7151",
+      "item_id": "f3245d41-ea77-11e1-aff1-0800200c9a66",
+      "label": "Client / Site",
+      "type": "textsingle",
+      "responses": {
+        "text": "Facere animi dolores ab dicta sed rerum quo ducimus atque. Et dolores dolorem impedit vel ut asperiores molestiae in. Consequatur ut et quia tenetur dolores explicabo."
+      }
+    },
+    {
+      "parent_id": "10E39E36-B1EE-4E22-BCB1-F358E8AE7151",
+      "item_id": "f3245d42-ea77-11e1-aff1-0800200c9a66",
+      "label": "Conducted on",
+      "type": "datetime",
+      "responses": {
+        "datetime": "2015-09-19T04:08:16.382Z"
+      }
+    },
+    {
+      "parent_id": "10E39E36-B1EE-4E22-BCB1-F358E8AE7151",
+      "item_id": "f3245d43-ea77-11e1-aff1-0800200c9a66",
+      "label": "Prepared by",
+      "type": "textsingle",
+      "responses": {
+        "text": "Voluptas et excepturi fuga et sint quis. Tempora sed inventore enim totam. Aliquid accusantium magnam quia numquam consequuntur nobis laboriosam."
+      }
+    },
+    {
+      "parent_id": "10E39E36-B1EE-4E22-BCB1-F358E8AE7151",
+      "item_id": "f3245d44-ea77-11e1-aff1-0800200c9a66",
+      "label": "Location",
+      "type": "address"
+    },
+    {
+      "parent_id": "10E39E36-B1EE-4E22-BCB1-F358E8AE7151",
+      "item_id": "f3245d45-ea77-11e1-aff1-0800200c9a66",
+      "label": "Personnel",
+      "type": "text",
+      "responses": {
+        "text": "Maiores ut cupiditate est exercitationem. Et recusandae numquam voluptas quibusdam rerum. Sint in nesciunt odit et est suscipit et fugiat."
+      }
+    }
+  ],
+  "items": [
+    {
+      "item_id": "d5d6fccd-80a4-4cf7-9013-53e0f44d1843",
+      "label": "Geese",
+      "type": "section",
+      "scoring": {
+        "combined_score": 97,
+        "combined_max_score": 177,
+        "combined_score_percentage": 54.802
+      },
+      "children": [
+        "f9b1af05-fb1b-4470-bbf8-29a409db964d",
+        "0dd3423f-32f4-46aa-900d-818a630983c3",
+        "82aee0e6-7d50-4e92-b0ba-d4087c7d1c5c",
+        "a1c7bc33-96a5-45e0-bc13-4ef41476d215"
+      ]
+    },
+    {
+      "parent_id": "d5d6fccd-80a4-4cf7-9013-53e0f44d1843",
+      "item_id": "f9b1af05-fb1b-4470-bbf8-29a409db964d",
+      "label": "Condors",
+      "type": "category",
+      "scoring": {
+        "combined_score": 3,
+        "combined_max_score": 5,
+        "combined_score_percentage": 60
+      },
+      "children": [
+        "fce3bdde-d39c-48db-92a8-74b7ed074d5b",
+        "adc40dbf-b994-463e-ae5e-af11aeda3e0d",
+        "90c41537-7cec-4419-9297-cc0dc13c8fe2",
+        "98a96fc2-b93b-47a7-b65a-d8728f90713e",
+        "f9b64b41-c642-4d39-9fd0-3bbb7a052a72"
+      ]
+    },
+    {
+      "parent_id": "f9b1af05-fb1b-4470-bbf8-29a409db964d",
+      "item_id": "fce3bdde-d39c-48db-92a8-74b7ed074d5b",
+      "label": "Has the mist been checked recently?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "f9b1af05-fb1b-4470-bbf8-29a409db964d",
+      "item_id": "adc40dbf-b994-463e-ae5e-af11aeda3e0d",
+      "label": "The oval is doggish and rakish?",
+      "type": "checkbox",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      }
+    },
+    {
+      "parent_id": "f9b1af05-fb1b-4470-bbf8-29a409db964d",
+      "item_id": "90c41537-7cec-4419-9297-cc0dc13c8fe2",
+      "label": "The ferry is battled and veiny?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "f9b1af05-fb1b-4470-bbf8-29a409db964d",
+      "item_id": "98a96fc2-b93b-47a7-b65a-d8728f90713e",
+      "label": "What is the state of broccoli?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "f9b1af05-fb1b-4470-bbf8-29a409db964d",
+      "item_id": "f9b64b41-c642-4d39-9fd0-3bbb7a052a72",
+      "label": "Is grandfather performing as expected?",
+      "type": "list",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "86f2c450-67fa-11e5-86cf-5ddafd1a2b79"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "86f4e730-67fa-11e5-86cf-5ddafd1a2b79",
+            "colour": "207,0,0",
+            "label": "self",
+            "score": 0,
+            "short_label": "glove",
+            "type": "text",
+            "enable_score": true
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "d5d6fccd-80a4-4cf7-9013-53e0f44d1843",
+      "item_id": "0dd3423f-32f4-46aa-900d-818a630983c3",
+      "label": "Postages",
+      "type": "category",
+      "scoring": {
+        "combined_score": 6,
+        "combined_max_score": 11,
+        "combined_score_percentage": 54.545
+      },
+      "children": [
+        "13832c41-ca1a-4b3e-bae1-f414711845bd",
+        "8baef7d7-ce0a-4870-b61a-b396c7fa99c3",
+        "6a7aeb93-fea4-4d4f-9c0b-7e82051de94c",
+        "b7f3d750-914f-4017-a750-4409667cc24d",
+        "6529061b-9d7c-4ea8-8436-c25cc82f5778",
+        "6c8b2945-818b-4f95-9037-564143de97d4",
+        "10ebed17-4976-4d76-8b4e-1e19f3f02b31",
+        "78447684-0e15-40ba-968b-25a8bf57ad54",
+        "edeab806-7492-40d4-876d-874063a4071f",
+        "17a1f26a-7dfc-4a6c-b9ff-0ac3e647c3a4",
+        "7a31d9d7-03d2-46a3-874c-f01bbd910dd4"
+      ]
+    },
+    {
+      "parent_id": "0dd3423f-32f4-46aa-900d-818a630983c3",
+      "item_id": "13832c41-ca1a-4b3e-bae1-f414711845bd",
+      "label": "Has the occupation been checked recently?",
+      "type": "question",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92351-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "At Risk",
+            "short_label": "R",
+            "colour": "223,77,77",
+            "image": "",
+            "enable_score": true,
+            "score": 0
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "0dd3423f-32f4-46aa-900d-818a630983c3",
+      "item_id": "8baef7d7-ce0a-4870-b61a-b396c7fa99c3",
+      "label": "The ton is lyrate and hurtling?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "0dd3423f-32f4-46aa-900d-818a630983c3",
+      "item_id": "6a7aeb93-fea4-4d4f-9c0b-7e82051de94c",
+      "label": "Is sampan performing as expected?",
+      "type": "question",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92351-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "At Risk",
+            "short_label": "R",
+            "colour": "223,77,77",
+            "image": "",
+            "enable_score": true,
+            "score": 0
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "0dd3423f-32f4-46aa-900d-818a630983c3",
+      "item_id": "b7f3d750-914f-4017-a750-4409667cc24d",
+      "label": "Is the scooter unbaked?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "0dd3423f-32f4-46aa-900d-818a630983c3",
+      "item_id": "6529061b-9d7c-4ea8-8436-c25cc82f5778",
+      "label": "What is the state of beef?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "0dd3423f-32f4-46aa-900d-818a630983c3",
+      "item_id": "6c8b2945-818b-4f95-9037-564143de97d4",
+      "label": "Did relation get changed?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "0dd3423f-32f4-46aa-900d-818a630983c3",
+      "item_id": "10ebed17-4976-4d76-8b4e-1e19f3f02b31",
+      "label": "What is the state of cucumber?",
+      "type": "checkbox",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      }
+    },
+    {
+      "parent_id": "0dd3423f-32f4-46aa-900d-818a630983c3",
+      "item_id": "78447684-0e15-40ba-968b-25a8bf57ad54",
+      "label": "Did marble get changed?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "0dd3423f-32f4-46aa-900d-818a630983c3",
+      "item_id": "edeab806-7492-40d4-876d-874063a4071f",
+      "label": "The whip is purpure and bowing?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "0dd3423f-32f4-46aa-900d-818a630983c3",
+      "item_id": "17a1f26a-7dfc-4a6c-b9ff-0ac3e647c3a4",
+      "label": "Did breakfast get changed?",
+      "type": "question",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92351-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "At Risk",
+            "short_label": "R",
+            "colour": "223,77,77",
+            "image": "",
+            "enable_score": true,
+            "score": 0
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "0dd3423f-32f4-46aa-900d-818a630983c3",
+      "item_id": "7a31d9d7-03d2-46a3-874c-f01bbd910dd4",
+      "label": "Did crib get changed?",
+      "type": "question",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf01-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "No",
+            "short_label": "N",
+            "colour": "223,77,77",
+            "image": "",
+            "enable_score": true,
+            "score": 0
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "d5d6fccd-80a4-4cf7-9013-53e0f44d1843",
+      "item_id": "82aee0e6-7d50-4e92-b0ba-d4087c7d1c5c",
+      "label": "Britishes",
+      "type": "category",
+      "scoring": {
+        "combined_score": 75,
+        "combined_max_score": 141,
+        "combined_score_percentage": 53.191
+      },
+      "children": [
+        "134ea94f-b962-4790-91e2-74c06f39d727",
+        "a45eb63e-fb99-4f7c-83f5-e794bc9b6f89",
+        "4c2d50ed-95c5-4602-b893-33559846c783",
+        "aabe423f-5fff-486c-8f71-956cad4691c0",
+        "e73547f9-3a99-44e0-afa8-8da9685e0d20",
+        "db72e540-14c1-49cf-b9f4-db2b2f517a1b",
+        "2aaf0df3-81f5-44b6-85fb-276885fedeaf"
+      ]
+    },
+    {
+      "parent_id": "82aee0e6-7d50-4e92-b0ba-d4087c7d1c5c",
+      "item_id": "134ea94f-b962-4790-91e2-74c06f39d727",
+      "label": "Did paul get changed?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "82aee0e6-7d50-4e92-b0ba-d4087c7d1c5c",
+      "item_id": "a45eb63e-fb99-4f7c-83f5-e794bc9b6f89",
+      "label": "The drama is needless and unspared?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "82aee0e6-7d50-4e92-b0ba-d4087c7d1c5c",
+      "item_id": "4c2d50ed-95c5-4602-b893-33559846c783",
+      "label": "Did bedroom get changed?",
+      "type": "list",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "86f2c450-67fa-11e5-86cf-5ddafd1a2b79"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "86f2c451-67fa-11e5-86cf-5ddafd1a2b79",
+            "colour": "0,201,8",
+            "label": "coach",
+            "score": 1,
+            "short_label": "halibut",
+            "type": "text",
+            "enable_score": true
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "82aee0e6-7d50-4e92-b0ba-d4087c7d1c5c",
+      "item_id": "aabe423f-5fff-486c-8f71-956cad4691c0",
+      "label": "Has the pet been checked recently?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "82aee0e6-7d50-4e92-b0ba-d4087c7d1c5c",
+      "item_id": "e73547f9-3a99-44e0-afa8-8da9685e0d20",
+      "label": "What is the state of self?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "82aee0e6-7d50-4e92-b0ba-d4087c7d1c5c",
+      "item_id": "db72e540-14c1-49cf-b9f4-db2b2f517a1b",
+      "label": "Is the edger motored?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "82aee0e6-7d50-4e92-b0ba-d4087c7d1c5c",
+      "item_id": "2aaf0df3-81f5-44b6-85fb-276885fedeaf",
+      "label": "The kidney is tussal and dolesome?",
+      "type": "slider",
+      "scoring": {
+        "score": 69,
+        "max_score": 135,
+        "score_percentage": 51.111
+      },
+      "options": {
+        "max": 135,
+        "min": 47
+      },
+      "responses": {
+        "value": 69
+      }
+    },
+    {
+      "parent_id": "d5d6fccd-80a4-4cf7-9013-53e0f44d1843",
+      "item_id": "a1c7bc33-96a5-45e0-bc13-4ef41476d215",
+      "label": "Spinaches",
+      "type": "category",
+      "scoring": {
+        "combined_score": 13,
+        "combined_max_score": 20,
+        "combined_score_percentage": 65
+      },
+      "children": [
+        "d79f8219-7e74-4ff6-a21d-23aafced6e39",
+        "c7734e66-9b98-4be5-b674-1c790e6d6ae4",
+        "1d68514a-449a-4c7a-94d7-3c04df81e949",
+        "ee20cc9f-b353-46d8-8488-79e14a3ed644",
+        "f6510b78-a9f7-47ed-9e62-ab09316f6d87",
+        "3c544302-51c8-4f8d-9cbc-f215cffe963a",
+        "8e103bf5-8aa1-4592-abd3-44954063c791",
+        "52aeaf64-9e06-479b-87a7-2cba9473711d",
+        "b8ba75a1-8190-4459-8346-aefec1f8ede1",
+        "41867e19-6ecd-4485-9a32-60fbaf7306b9",
+        "a30a1e34-8ba0-4253-b693-5c97761a464a"
+      ]
+    },
+    {
+      "parent_id": "a1c7bc33-96a5-45e0-bc13-4ef41476d215",
+      "item_id": "d79f8219-7e74-4ff6-a21d-23aafced6e39",
+      "label": "Did flare get changed?",
+      "type": "checkbox",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      }
+    },
+    {
+      "parent_id": "a1c7bc33-96a5-45e0-bc13-4ef41476d215",
+      "item_id": "c7734e66-9b98-4be5-b674-1c790e6d6ae4",
+      "label": "The boot is crying and weakly?",
+      "type": "question",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf01-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "No",
+            "short_label": "N",
+            "colour": "223,77,77",
+            "image": "",
+            "enable_score": true,
+            "score": 0
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "a1c7bc33-96a5-45e0-bc13-4ef41476d215",
+      "item_id": "1d68514a-449a-4c7a-94d7-3c04df81e949",
+      "label": "Is the cauliflower frostlike?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "a1c7bc33-96a5-45e0-bc13-4ef41476d215",
+      "item_id": "ee20cc9f-b353-46d8-8488-79e14a3ed644",
+      "label": "Did banker get changed?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "a1c7bc33-96a5-45e0-bc13-4ef41476d215",
+      "item_id": "f6510b78-a9f7-47ed-9e62-ab09316f6d87",
+      "label": "What is the state of committee?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "a1c7bc33-96a5-45e0-bc13-4ef41476d215",
+      "item_id": "3c544302-51c8-4f8d-9cbc-f215cffe963a",
+      "label": "Is measure performing as expected?",
+      "type": "question",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf01-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "No",
+            "short_label": "N",
+            "colour": "223,77,77",
+            "image": "",
+            "enable_score": true,
+            "score": 0
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "a1c7bc33-96a5-45e0-bc13-4ef41476d215",
+      "item_id": "8e103bf5-8aa1-4592-abd3-44954063c791",
+      "label": "What is the state of pint?",
+      "type": "slider",
+      "scoring": {
+        "score": 6,
+        "max_score": 10,
+        "score_percentage": 60
+      },
+      "responses": {
+        "value": 6
+      }
+    },
+    {
+      "parent_id": "a1c7bc33-96a5-45e0-bc13-4ef41476d215",
+      "item_id": "52aeaf64-9e06-479b-87a7-2cba9473711d",
+      "label": "Has the vision been checked recently?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "a1c7bc33-96a5-45e0-bc13-4ef41476d215",
+      "item_id": "b8ba75a1-8190-4459-8346-aefec1f8ede1",
+      "label": "The cry is deedless and cormous?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "a1c7bc33-96a5-45e0-bc13-4ef41476d215",
+      "item_id": "41867e19-6ecd-4485-9a32-60fbaf7306b9",
+      "label": "Is the america daimen?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "a1c7bc33-96a5-45e0-bc13-4ef41476d215",
+      "item_id": "a30a1e34-8ba0-4253-b693-5c97761a464a",
+      "label": "Did flag get changed?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "item_id": "4f991d88-6d8f-4f05-9af9-6e0b04e91c47",
+      "label": "Galleies",
+      "type": "section",
+      "scoring": {
+        "combined_score": 60,
+        "combined_max_score": 123,
+        "combined_score_percentage": 48.78
+      },
+      "children": [
+        "7a53c7ed-d286-42d2-b3cf-3ac43dbdcb7b",
+        "c8adc272-24ed-4453-9292-76aaa5e7f48c",
+        "55adfe94-7c66-4e8f-a84a-c17148f915ea",
+        "7efb11ee-706c-4ae9-b769-0cb705adbcf2"
+      ]
+    },
+    {
+      "parent_id": "4f991d88-6d8f-4f05-9af9-6e0b04e91c47",
+      "item_id": "7a53c7ed-d286-42d2-b3cf-3ac43dbdcb7b",
+      "label": "Classes",
+      "type": "category",
+      "scoring": {
+        "combined_score": 5,
+        "combined_max_score": 14,
+        "combined_score_percentage": 35.714
+      },
+      "children": [
+        "6771df9d-4b84-4033-aa4e-552ec369626c",
+        "7c94fac0-f4c4-42f2-b0a5-a006fc63863f",
+        "9b77453a-f62d-44f2-a28e-6acb704da707",
+        "31b1346c-ccf3-42e2-8c78-170280ec0d54",
+        "c9f68bf2-d6c2-4f56-b1e4-0d3978f6d6f5"
+      ]
+    },
+    {
+      "parent_id": "7a53c7ed-d286-42d2-b3cf-3ac43dbdcb7b",
+      "item_id": "6771df9d-4b84-4033-aa4e-552ec369626c",
+      "label": "The debt is tarnal and daimen?",
+      "type": "slider",
+      "scoring": {
+        "score": 4,
+        "max_score": 10,
+        "score_percentage": 40
+      },
+      "responses": {
+        "value": 4
+      }
+    },
+    {
+      "parent_id": "7a53c7ed-d286-42d2-b3cf-3ac43dbdcb7b",
+      "item_id": "7c94fac0-f4c4-42f2-b0a5-a006fc63863f",
+      "label": "The novel is dendroid and loveless?",
+      "type": "switch",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      }
+    },
+    {
+      "parent_id": "7a53c7ed-d286-42d2-b3cf-3ac43dbdcb7b",
+      "item_id": "9b77453a-f62d-44f2-a28e-6acb704da707",
+      "label": "The class is guideless and staring?",
+      "type": "question",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf01-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "No",
+            "short_label": "N",
+            "colour": "223,77,77",
+            "image": "",
+            "enable_score": true,
+            "score": 0
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7a53c7ed-d286-42d2-b3cf-3ac43dbdcb7b",
+      "item_id": "31b1346c-ccf3-42e2-8c78-170280ec0d54",
+      "label": "Is the bail bloated?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7a53c7ed-d286-42d2-b3cf-3ac43dbdcb7b",
+      "item_id": "c9f68bf2-d6c2-4f56-b1e4-0d3978f6d6f5",
+      "label": "What is the state of wrecker?",
+      "type": "question",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92351-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "At Risk",
+            "short_label": "R",
+            "colour": "223,77,77",
+            "image": "",
+            "enable_score": true,
+            "score": 0
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "4f991d88-6d8f-4f05-9af9-6e0b04e91c47",
+      "item_id": "c8adc272-24ed-4453-9292-76aaa5e7f48c",
+      "label": "Hardwares",
+      "type": "category",
+      "scoring": {
+        "combined_score": 15,
+        "combined_max_score": 19,
+        "combined_score_percentage": 78.947
+      },
+      "children": [
+        "729e8ae6-1715-41f1-aaca-13f1df026b6e",
+        "3b2d519d-90ed-47ad-be38-3270e771e4cf",
+        "428c1777-2894-4fe3-959f-1e6a57e129a8",
+        "823eba2b-9039-4ad7-9866-f30b0f2a1549",
+        "75d84bf9-192e-4c68-b3dc-2cc0325bba88",
+        "120cb2cd-bb4f-4296-9fe3-3e97ad92eca9",
+        "848accf4-29c1-4647-954c-88208b05fe9c",
+        "f4dd05d8-2e20-42ca-8d9e-b7706f61ab37",
+        "9c73957b-7157-4d8f-92b8-8c606df4efc7",
+        "66df7fdf-7d82-498d-91c9-b6c71b205edc"
+      ]
+    },
+    {
+      "parent_id": "c8adc272-24ed-4453-9292-76aaa5e7f48c",
+      "item_id": "729e8ae6-1715-41f1-aaca-13f1df026b6e",
+      "label": "What is the state of pleasure?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "c8adc272-24ed-4453-9292-76aaa5e7f48c",
+      "item_id": "3b2d519d-90ed-47ad-be38-3270e771e4cf",
+      "label": "What is the state of index?",
+      "type": "checkbox",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      }
+    },
+    {
+      "parent_id": "c8adc272-24ed-4453-9292-76aaa5e7f48c",
+      "item_id": "428c1777-2894-4fe3-959f-1e6a57e129a8",
+      "label": "What is the state of napkin?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "c8adc272-24ed-4453-9292-76aaa5e7f48c",
+      "item_id": "823eba2b-9039-4ad7-9866-f30b0f2a1549",
+      "label": "Did pollution get changed?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "c8adc272-24ed-4453-9292-76aaa5e7f48c",
+      "item_id": "75d84bf9-192e-4c68-b3dc-2cc0325bba88",
+      "label": "Has the poland been checked recently?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "c8adc272-24ed-4453-9292-76aaa5e7f48c",
+      "item_id": "120cb2cd-bb4f-4296-9fe3-3e97ad92eca9",
+      "label": "Has the way been checked recently?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "c8adc272-24ed-4453-9292-76aaa5e7f48c",
+      "item_id": "848accf4-29c1-4647-954c-88208b05fe9c",
+      "label": "Has the gymnast been checked recently?",
+      "type": "slider",
+      "scoring": {
+        "score": 8,
+        "max_score": 10,
+        "score_percentage": 80
+      },
+      "responses": {
+        "value": 8
+      }
+    },
+    {
+      "parent_id": "c8adc272-24ed-4453-9292-76aaa5e7f48c",
+      "item_id": "f4dd05d8-2e20-42ca-8d9e-b7706f61ab37",
+      "label": "Did brush get changed?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "c8adc272-24ed-4453-9292-76aaa5e7f48c",
+      "item_id": "9c73957b-7157-4d8f-92b8-8c606df4efc7",
+      "label": "Has the himalayan been checked recently?",
+      "type": "list",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "86f2c450-67fa-11e5-86cf-5ddafd1a2b79"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "86f4e730-67fa-11e5-86cf-5ddafd1a2b79",
+            "colour": "207,0,0",
+            "label": "self",
+            "score": 0,
+            "short_label": "glove",
+            "type": "text",
+            "enable_score": true
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "c8adc272-24ed-4453-9292-76aaa5e7f48c",
+      "item_id": "66df7fdf-7d82-498d-91c9-b6c71b205edc",
+      "label": "Is the bar streamless?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "4f991d88-6d8f-4f05-9af9-6e0b04e91c47",
+      "item_id": "55adfe94-7c66-4e8f-a84a-c17148f915ea",
+      "label": "Speedboats",
+      "type": "category",
+      "scoring": {
+        "combined_score": 5,
+        "combined_max_score": 6,
+        "combined_score_percentage": 83.333
+      },
+      "children": [
+        "61cbf608-c6ad-4553-9c0a-4b2f1b2ae0d4",
+        "ee99daf5-78e5-403f-817a-66cc27dd5b1f",
+        "bbf45eb2-d033-4225-9c54-e1dc49959ffc",
+        "82267a1d-19f9-4593-87ff-ba071ea52b43",
+        "c956a8e8-a335-40b3-8c79-451ec6375ef1",
+        "9cfd474e-8a9b-4e86-81e6-0aece6095d4b"
+      ]
+    },
+    {
+      "parent_id": "55adfe94-7c66-4e8f-a84a-c17148f915ea",
+      "item_id": "61cbf608-c6ad-4553-9c0a-4b2f1b2ae0d4",
+      "label": "What is the state of rotate?",
+      "type": "list",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "86f2c450-67fa-11e5-86cf-5ddafd1a2b79"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "86f2c451-67fa-11e5-86cf-5ddafd1a2b79",
+            "colour": "0,201,8",
+            "label": "coach",
+            "score": 1,
+            "short_label": "halibut",
+            "type": "text",
+            "enable_score": true
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "55adfe94-7c66-4e8f-a84a-c17148f915ea",
+      "item_id": "ee99daf5-78e5-403f-817a-66cc27dd5b1f",
+      "label": "Is the sponge plausive?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "55adfe94-7c66-4e8f-a84a-c17148f915ea",
+      "item_id": "bbf45eb2-d033-4225-9c54-e1dc49959ffc",
+      "label": "What is the state of loss?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "55adfe94-7c66-4e8f-a84a-c17148f915ea",
+      "item_id": "82267a1d-19f9-4593-87ff-ba071ea52b43",
+      "label": "Is sail performing as expected?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "55adfe94-7c66-4e8f-a84a-c17148f915ea",
+      "item_id": "c956a8e8-a335-40b3-8c79-451ec6375ef1",
+      "label": "Is vibraphone performing as expected?",
+      "type": "question",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92351-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "At Risk",
+            "short_label": "R",
+            "colour": "223,77,77",
+            "image": "",
+            "enable_score": true,
+            "score": 0
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "55adfe94-7c66-4e8f-a84a-c17148f915ea",
+      "item_id": "9cfd474e-8a9b-4e86-81e6-0aece6095d4b",
+      "label": "Is the plantation confused?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "4f991d88-6d8f-4f05-9af9-6e0b04e91c47",
+      "item_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "label": "Clefs",
+      "type": "category",
+      "scoring": {
+        "combined_score": 35,
+        "combined_max_score": 84,
+        "combined_score_percentage": 41.667
+      },
+      "children": [
+        "f11a5466-66c0-4206-a16a-1b579da91d56",
+        "d9c2b806-3942-4e09-8689-7a23adf76261",
+        "2d0ea963-9953-4019-a480-4060591919bf",
+        "85edb6c0-cf4d-490d-974c-7e974398070a",
+        "45bee58d-b1fe-4dd7-afaa-9acd483d504c",
+        "fb4a6a36-2b40-4611-bbe2-53a5e896e9b9",
+        "58b71f33-e0dc-4349-a034-abbd82cb0927",
+        "6068d126-055e-46bf-ae18-949463f2ddb5",
+        "63c8174f-4ff8-4d7d-b0af-17f8fa4f2a0c",
+        "c8ce1e6c-bf7c-4d0c-9ef4-316e197a06ca",
+        "671bc722-8eda-4a01-b5d0-01f145e5336e",
+        "6dab297d-7a82-4ec5-b7a7-c2f15f7e9f2b",
+        "39179227-6115-4425-85ee-303a96aa88b7",
+        "544a5e69-a4ac-42df-88f4-97e717a08c8a"
+      ]
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "f11a5466-66c0-4206-a16a-1b579da91d56",
+      "label": "What is the state of text?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "d9c2b806-3942-4e09-8689-7a23adf76261",
+      "label": "Did crocodile get changed?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "2d0ea963-9953-4019-a480-4060591919bf",
+      "label": "The sound is fleshly and wolfish?",
+      "type": "list",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "86f2c450-67fa-11e5-86cf-5ddafd1a2b79"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "86f2c451-67fa-11e5-86cf-5ddafd1a2b79",
+            "colour": "0,201,8",
+            "label": "coach",
+            "score": 1,
+            "short_label": "halibut",
+            "type": "text",
+            "enable_score": true
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "85edb6c0-cf4d-490d-974c-7e974398070a",
+      "label": "The scallion is icky and inform?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "45bee58d-b1fe-4dd7-afaa-9acd483d504c",
+      "label": "Did coast get changed?",
+      "type": "list",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "86f2c450-67fa-11e5-86cf-5ddafd1a2b79"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "86f4e730-67fa-11e5-86cf-5ddafd1a2b79",
+            "colour": "207,0,0",
+            "label": "self",
+            "score": 0,
+            "short_label": "glove",
+            "type": "text",
+            "enable_score": true
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "fb4a6a36-2b40-4611-bbe2-53a5e896e9b9",
+      "label": "The jacket is unculled and waggly?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "58b71f33-e0dc-4349-a034-abbd82cb0927",
+      "label": "The suit is workless and unloved?",
+      "type": "list",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "86f2c450-67fa-11e5-86cf-5ddafd1a2b79"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "86f4e730-67fa-11e5-86cf-5ddafd1a2b79",
+            "colour": "207,0,0",
+            "label": "self",
+            "score": 0,
+            "short_label": "glove",
+            "type": "text",
+            "enable_score": true
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "6068d126-055e-46bf-ae18-949463f2ddb5",
+      "label": "Has the language been checked recently?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "63c8174f-4ff8-4d7d-b0af-17f8fa4f2a0c",
+      "label": "Is date performing as expected?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "c8ce1e6c-bf7c-4d0c-9ef4-316e197a06ca",
+      "label": "What is the state of piccolo?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "671bc722-8eda-4a01-b5d0-01f145e5336e",
+      "label": "Is the court bumptious?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "6dab297d-7a82-4ec5-b7a7-c2f15f7e9f2b",
+      "label": "The sister-in-law is goatish and prepared?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "39179227-6115-4425-85ee-303a96aa88b7",
+      "label": "Is the hardhat bricky?",
+      "type": "slider",
+      "scoring": {
+        "score": 24,
+        "max_score": 71,
+        "score_percentage": 33.803
+      },
+      "options": {
+        "max": 71,
+        "min": 12
+      },
+      "responses": {
+        "value": 24
+      }
+    },
+    {
+      "parent_id": "7efb11ee-706c-4ae9-b769-0cb705adbcf2",
+      "item_id": "544a5e69-a4ac-42df-88f4-97e717a08c8a",
+      "label": "Has the rugby been checked recently?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "item_id": "829fee4d-896a-48af-8f17-54944ccd77cc",
+      "label": "Mechanics",
+      "type": "section",
+      "scoring": {
+        "combined_score": 21,
+        "combined_max_score": 31,
+        "combined_score_percentage": 67.742
+      },
+      "children": [
+        "5f1ed191-81da-4e4d-8d73-88146f44138a",
+        "19d59b69-e1e3-4f4b-bb2c-349099f47c57",
+        "93b45a4d-5550-4237-94d8-da706fee2cbf"
+      ]
+    },
+    {
+      "parent_id": "829fee4d-896a-48af-8f17-54944ccd77cc",
+      "item_id": "5f1ed191-81da-4e4d-8d73-88146f44138a",
+      "label": "Salmon",
+      "type": "category",
+      "scoring": {
+        "combined_score": 5,
+        "combined_max_score": 6,
+        "combined_score_percentage": 83.333
+      },
+      "children": [
+        "3e4188d0-d077-4772-963d-fe6561aa0f6c",
+        "0e6db921-9ab0-4072-9068-1d25f809186e",
+        "15731b5b-95a2-4ed7-9849-cdf669256754",
+        "99cb30ac-bd02-4db5-b574-eb9ebc0202b3",
+        "fdc7c014-9e39-432b-a44d-012f37ffecd0",
+        "351f6ca7-1939-4e08-87de-b917835b114b"
+      ]
+    },
+    {
+      "parent_id": "5f1ed191-81da-4e4d-8d73-88146f44138a",
+      "item_id": "3e4188d0-d077-4772-963d-fe6561aa0f6c",
+      "label": "The dentist is woesome and gainless?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "5f1ed191-81da-4e4d-8d73-88146f44138a",
+      "item_id": "0e6db921-9ab0-4072-9068-1d25f809186e",
+      "label": "Is the ton peaceless?",
+      "type": "list",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "86f2c450-67fa-11e5-86cf-5ddafd1a2b79"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "86f4e730-67fa-11e5-86cf-5ddafd1a2b79",
+            "colour": "207,0,0",
+            "label": "self",
+            "score": 0,
+            "short_label": "glove",
+            "type": "text",
+            "enable_score": true
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "5f1ed191-81da-4e4d-8d73-88146f44138a",
+      "item_id": "15731b5b-95a2-4ed7-9849-cdf669256754",
+      "label": "The herring is shyest and listless?",
+      "type": "list",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "86f2c450-67fa-11e5-86cf-5ddafd1a2b79"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "86f2c451-67fa-11e5-86cf-5ddafd1a2b79",
+            "colour": "0,201,8",
+            "label": "coach",
+            "score": 1,
+            "short_label": "halibut",
+            "type": "text",
+            "enable_score": true
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "5f1ed191-81da-4e4d-8d73-88146f44138a",
+      "item_id": "99cb30ac-bd02-4db5-b574-eb9ebc0202b3",
+      "label": "What is the state of mouse?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "5f1ed191-81da-4e4d-8d73-88146f44138a",
+      "item_id": "fdc7c014-9e39-432b-a44d-012f37ffecd0",
+      "label": "What is the state of Saturday?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "5f1ed191-81da-4e4d-8d73-88146f44138a",
+      "item_id": "351f6ca7-1939-4e08-87de-b917835b114b",
+      "label": "Is the belgian gearless?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "829fee4d-896a-48af-8f17-54944ccd77cc",
+      "item_id": "19d59b69-e1e3-4f4b-bb2c-349099f47c57",
+      "label": "Memories",
+      "type": "category",
+      "scoring": {
+        "combined_score": 14,
+        "combined_max_score": 20,
+        "combined_score_percentage": 70
+      },
+      "children": [
+        "ba5cc786-0915-4666-9c3c-e55f9176fb21",
+        "81502bf8-8460-4e84-bab6-48db45fbe2c4",
+        "8bf9df35-37a8-4ab4-9cf0-545898948907",
+        "1c96cb9b-d094-4728-8dd1-995991292411",
+        "de186963-9440-417d-87e3-497b50d59701",
+        "87afe0ff-fcd1-4b07-a1b1-f98e52d2daf4",
+        "faa8adfe-c214-402d-8b7b-9a134981f4b7",
+        "d8c6d695-15ea-4615-bd45-231de4acdc95",
+        "ddc8a55e-9d87-4831-b687-31a406d66542",
+        "c497a94a-8b22-4dde-820c-d9150ccd57ec",
+        "b255f5e0-3433-400d-8d13-57142cc445bc"
+      ]
+    },
+    {
+      "parent_id": "19d59b69-e1e3-4f4b-bb2c-349099f47c57",
+      "item_id": "ba5cc786-0915-4666-9c3c-e55f9176fb21",
+      "label": "What is the state of nose?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "19d59b69-e1e3-4f4b-bb2c-349099f47c57",
+      "item_id": "81502bf8-8460-4e84-bab6-48db45fbe2c4",
+      "label": "Is stool performing as expected?",
+      "type": "question",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf01-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "No",
+            "short_label": "N",
+            "colour": "223,77,77",
+            "image": "",
+            "enable_score": true,
+            "score": 0
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "19d59b69-e1e3-4f4b-bb2c-349099f47c57",
+      "item_id": "8bf9df35-37a8-4ab4-9cf0-545898948907",
+      "label": "Is the karate smeary?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "19d59b69-e1e3-4f4b-bb2c-349099f47c57",
+      "item_id": "1c96cb9b-d094-4728-8dd1-995991292411",
+      "label": "Did business get changed?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "19d59b69-e1e3-4f4b-bb2c-349099f47c57",
+      "item_id": "de186963-9440-417d-87e3-497b50d59701",
+      "label": "The ronald is chrismal and flexile?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "19d59b69-e1e3-4f4b-bb2c-349099f47c57",
+      "item_id": "87afe0ff-fcd1-4b07-a1b1-f98e52d2daf4",
+      "label": "Is the word littler?",
+      "type": "question",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf01-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "No",
+            "short_label": "N",
+            "colour": "223,77,77",
+            "image": "",
+            "enable_score": true,
+            "score": 0
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "19d59b69-e1e3-4f4b-bb2c-349099f47c57",
+      "item_id": "faa8adfe-c214-402d-8b7b-9a134981f4b7",
+      "label": "The soybean is unmaimed and manful?",
+      "type": "list",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "86f2c450-67fa-11e5-86cf-5ddafd1a2b79"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "86f2c451-67fa-11e5-86cf-5ddafd1a2b79",
+            "colour": "0,201,8",
+            "label": "coach",
+            "score": 1,
+            "short_label": "halibut",
+            "type": "text",
+            "enable_score": true
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "19d59b69-e1e3-4f4b-bb2c-349099f47c57",
+      "item_id": "d8c6d695-15ea-4615-bd45-231de4acdc95",
+      "label": "The carnation is confined and barbate?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb11-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "b5c92350-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Safe",
+            "short_label": "S",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "19d59b69-e1e3-4f4b-bb2c-349099f47c57",
+      "item_id": "ddc8a55e-9d87-4831-b687-31a406d66542",
+      "label": "Did june get changed?",
+      "type": "slider",
+      "scoring": {
+        "score": 7,
+        "max_score": 10,
+        "score_percentage": 70
+      },
+      "responses": {
+        "value": 7
+      }
+    },
+    {
+      "parent_id": "19d59b69-e1e3-4f4b-bb2c-349099f47c57",
+      "item_id": "c497a94a-8b22-4dde-820c-d9150ccd57ec",
+      "label": "Is tornado performing as expected?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "19d59b69-e1e3-4f4b-bb2c-349099f47c57",
+      "item_id": "b255f5e0-3433-400d-8d13-57142cc445bc",
+      "label": "Is the porter saltless?",
+      "type": "checkbox",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      }
+    },
+    {
+      "parent_id": "829fee4d-896a-48af-8f17-54944ccd77cc",
+      "item_id": "93b45a4d-5550-4237-94d8-da706fee2cbf",
+      "label": "Vietnams",
+      "type": "category",
+      "scoring": {
+        "combined_score": 2,
+        "combined_max_score": 5,
+        "combined_score_percentage": 40
+      },
+      "children": [
+        "05abb36e-a0ae-4593-9324-5ad029ad6cf4",
+        "45bcdd5b-1831-4c6a-a12e-87ac46a868ae",
+        "81ca4dfc-d35a-404a-a781-1c52d09a4c7d",
+        "cf3db7a9-9d3c-4122-865e-867665a8ec9b",
+        "c6e41d67-3aa8-4ef6-9215-fb68582ba41c"
+      ]
+    },
+    {
+      "parent_id": "93b45a4d-5550-4237-94d8-da706fee2cbf",
+      "item_id": "05abb36e-a0ae-4593-9324-5ad029ad6cf4",
+      "label": "Did algebra get changed?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "93b45a4d-5550-4237-94d8-da706fee2cbf",
+      "item_id": "45bcdd5b-1831-4c6a-a12e-87ac46a868ae",
+      "label": "Is the broker xeric?",
+      "type": "list",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "86f2c450-67fa-11e5-86cf-5ddafd1a2b79"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "86f4e730-67fa-11e5-86cf-5ddafd1a2b79",
+            "colour": "207,0,0",
+            "label": "self",
+            "score": 0,
+            "short_label": "glove",
+            "type": "text",
+            "enable_score": true
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "93b45a4d-5550-4237-94d8-da706fee2cbf",
+      "item_id": "81ca4dfc-d35a-404a-a781-1c52d09a4c7d",
+      "label": "What is the state of pvc?",
+      "type": "question",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf01-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "No",
+            "short_label": "N",
+            "colour": "223,77,77",
+            "image": "",
+            "enable_score": true,
+            "score": 0
+          }
+        ]
+      }
+    },
+    {
+      "parent_id": "93b45a4d-5550-4237-94d8-da706fee2cbf",
+      "item_id": "cf3db7a9-9d3c-4122-865e-867665a8ec9b",
+      "label": "What is the state of subway?",
+      "type": "checkbox",
+      "scoring": {
+        "score": 0,
+        "max_score": 1,
+        "score_percentage": 0
+      }
+    },
+    {
+      "parent_id": "93b45a4d-5550-4237-94d8-da706fee2cbf",
+      "item_id": "c6e41d67-3aa8-4ef6-9215-fb68582ba41c",
+      "label": "Is computer performing as expected?",
+      "type": "question",
+      "scoring": {
+        "score": 1,
+        "max_score": 1,
+        "score_percentage": 100
+      },
+      "options": {
+        "response_set": "7bb1cb10-7020-11e2-bcfd-0800200c9a66"
+      },
+      "responses": {
+        "selected": [
+          {
+            "id": "8bcfbf00-e11b-11e1-9b23-0800200c9a66",
+            "type": "text",
+            "label": "Yes",
+            "short_label": "Y",
+            "colour": "162,182,58",
+            "image": "",
+            "enable_score": true,
+            "score": 1
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "__metadata": { "type": "SP.Data.SafetyCulture_x0020_AuditsListItem" },
+  "Audit Id": "audit_b0da8ae459d949148f443ac80d814f87",
+  "Title": "Test Audit",
+  "Score": 1,
+  "Total Score": 1,
+  "Score Percentage": 100,
+  "Duration": 0,
+  "Date Modified": "2015-11-05T00:25:58.121Z",
+  "Date Started": "2015-11-05T00:25:35.887Z",
+  "SafetyCulture Owner": "Nicholas Matenaar",
+  "SafetyCulture Author": "Nicholas Matenaar",
+  "Device Id": "8a582619-95e9-43e8-b671-5f316745b254",
+  "Template Name": "Test template",
+  "Template Description": "A Test template"
+}
