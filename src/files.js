@@ -2,7 +2,7 @@ import fs from 'fs';
 import Promise from 'bluebird';
 import path from 'path';
 
-import listURI from './lists';
+import { listURI } from './lists';
 
 const readFile = Promise.promisify(fs.readFile);
 
