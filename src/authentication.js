@@ -12,9 +12,9 @@ const getCustomerDomain = (host) => {
 };
 
 const extractCookies = (headers) => {
-  var cookies = {};
-  _.each(headers['set-cookie'], function(value, key) {
-    var parsedCookies = value.split(/\=(.+)?/);
+  let cookies = {};
+  _.each(headers['set-cookie'], function(value) {
+    let parsedCookies = value.split(/\=(.+)?/);
     parsedCookies[1] = parsedCookies[1].substr(0, parsedCookies[1].indexOf(';'));
     cookies[parsedCookies[0]] = parsedCookies[1];
   });
