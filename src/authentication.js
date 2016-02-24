@@ -3,6 +3,8 @@ import parser from 'xml2json';
 import rp from 'request-promise';
 import _ from 'lodash';
 
+import { USER_AGENT } from './misc';
+
 const saml = fs.readFileSync(__dirname + '/../config/saml.xml').toString();
 
 const getCustomerDomain = (host) => {
@@ -38,7 +40,8 @@ const getDigest = ({cookies, domain}) => {
   let headers = {
     'Cookie': 'FedAuth=' + cookies.FedAuth + ';' + 'rtFa=' + cookies.rtFa,
     'Content-Type': 'application/json; odata=verbose',
-    'Accept': 'application/json; odata=verbose'
+    'Accept': 'application/json; odata=verbose',
+    'User-Agent': USER_AGENT
   };
 
   return rp.post({url: url, headers: headers }).then((resp) => {
@@ -49,10 +52,8 @@ const getDigest = ({cookies, domain}) => {
     return {
       requestDigest: requestDigest,
       requestDigestTimeoutSeconds: requestDigestTimeoutSeconds,
-      cookies: {
-        FedAuth: cookies.FedAuth,
-        rtFa: cookies.rtFa
-      }
+      FedAuth: cookies.FedAuth,
+      rtFa: cookies.rtFa
     };
   });
 };
@@ -62,7 +63,11 @@ const getToken = ({ username, password, host }) => {
   let domain = getCustomerDomain(host);
   let url = 'https://login.microsoftonline.com/extSTS.srf';
 
-  return rp.post({url: url, body: request}).then((resp) => {
+  const headers = {
+    'User-Agent': USER_AGENT
+  };
+
+  return rp.post({url: url, body: request, headers: headers}).then((resp) => {
     let body = parser.toJson(resp, {object: true});
 
     let responseBody = body['S:Envelope']['S:Body'];
@@ -76,10 +81,16 @@ const getToken = ({ username, password, host }) => {
 // Get the Cookies
 const getCookies = ({token, domain}) => {
   let url = 'https://' + domain + '.sharepoint.com/_forms/default.aspx?wa=wsignin1.0';
+
+  const headers = {
+    'User-Agent': USER_AGENT
+  };
+
   let options = { url: url,
                   body: token,
                   resolveWithFullResponse: true,
                   followAllRedirects: true,
+                  headers: headers,
                   jar: true };
 
   return rp.post(options).then((response) => {

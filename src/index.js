@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import { listURI } from './lists';
 import { Files } from './files';
+import { USER_AGENT } from './misc';
 
 // re-export
 export { FIELD_TYPES } from './fields';
@@ -60,6 +61,7 @@ export class SharePoint {
         'Cookie': `FedAuth=${auth.FedAuth};rtFa=${auth.rtFa};`,
         'X-RequestDigest': auth.requestDigest,
         'Accept': 'application/json;odata=verbose',
+        'User-Agent': USER_AGENT,
         'Content-Type': 'application/json;odata=verbose'
       });
 

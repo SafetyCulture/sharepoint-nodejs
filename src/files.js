@@ -19,13 +19,18 @@ export function Files(api) {
      * @param {string} folderName The name of the folder in the lsit to upload too
      * @returns {Promise} Resolves on success, rejects with error from SP
      */
-    uploadFile: (list, fileLocation, folderName = null) => {
+    uploadFile: ({ list, fileLocation, folderName = null, overwrite = false }) => {
       let fileName = path.basename(fileLocation);
       let folder = folderName ? folderUrl(folderName) : 'RootFolder';
+      let options = '';
+
+      if (overwrite === true) {
+        options = ', overwrite=true';
+      }
 
       return readFile(fileLocation).then((data) => {
         let headers = {'content-length': data.length};
-        return api._axios.post(`${listURI(list)}/${folder}/Files/Add(url='${fileName}', overwrite=true)?$expand=ListItemAllFields`,
+        return api._axios.post(`${listURI(list)}/${folder}/Files/Add(url='${fileName}'${options})?$expand=ListItemAllFields`,
                                 data, {headers: headers})
                           .then((response) => {
                             return response.data;
