@@ -4,11 +4,7 @@ import axios from 'axios';
 import uuid from 'node-uuid';
 import { parseString } from 'xml2js';
 
-import { LIST_TEMPLATES, listURI } from './lists';
-
-// Small helper to replace spaces in keys with '_x0020_' within an object
-const fillSpaces = data =>
-  _.mapKeys(data, (val, key) => key.replace(/ /g, '_x0020_'));
+import { LIST_TEMPLATES, listURI, fillSpaces } from './lists';
 
 /**
 * Batch class

@@ -1,20 +1,17 @@
 import _ from 'lodash';
 import querystring from 'querystring';
 import axios from 'axios';
+import rp from 'request-promise';
 
-import { listURI } from './lists';
+import { listURI, fillSpaces } from './lists';
 import { Files } from './files';
 import { USER_AGENT } from './misc';
 
 // re-export
 export { FIELD_TYPES } from './fields';
-export { LIST_TEMPLATES, listURI, listType } from './lists';
+export { LIST_TEMPLATES, listURI, listType, fillSpaces } from './lists';
 export { Batch } from './batch';
 export { Authentication } from './authentication';
-
-// Small helper to replace spaces in keys with '_x0020_' within an object
-const fillSpaces = data =>
-  _.mapKeys(data, (val, key) => key.replace(/ /g, '_x0020_'));
 
 /**
 * Formats a response to replace '_x0020_' with spaces.
@@ -44,6 +41,8 @@ export class SharePoint {
     if (!host) throw new Error('SharePoint requires host string');
     if (!auth) throw new Error('SharePoint requires auth object');
 
+    this.auth = auth;
+    this.host = host;
     this._axios = this._configureInterceptors(axios.create(), { host, auth });
     this.files = Files(this);
   }
@@ -115,11 +114,33 @@ export class SharePoint {
   }
 
   update(resource, body) {
-    let headers = {headers: {'IF-MATCH': 'etag or "*"',
-                             'X-HTTP-Method': 'MERGE'}};
-    return this._axios.post(`${resource}`,
-                            body,
-                            headers);
+    let headers = {
+      'Cookie': `FedAuth=${this.auth.FedAuth};rtFa=${this.auth.rtFa};`,
+      'X-RequestDigest': this.auth.requestDigest,
+      'Accept': 'application/json;odata=verbose',
+      'User-Agent': USER_AGENT,
+      'IF-MATCH': '*',
+      'X-HTTP-Method': 'MERGE',
+      'Content-Type': 'application/json;odata=verbose'};
+
+    let options = {
+      headers: headers,
+      method: 'POST',
+      body: body,
+      resolveWithFullResponse: true,
+      json: true,
+      uri: `${this.host}/_api/web${resource}`
+    };
+
+    return rp(options);
+  }
+
+  delete(resource) {
+    const headers = {
+      'X-HTTP-Method': 'DELETE',
+      'IF-MATCH': '*',
+    };
+    this._axios.post(resource, {}, headers);
   }
 
   createItem(list, item) {
@@ -127,8 +148,7 @@ export class SharePoint {
   }
 
   updateItem(list, itemId, item) {
-    let url = `${listURI(list)}/items/(${itemId})`;
-    return this.update(url, item);
+    return this.update(`${listURI(list)}/items(${itemId})`, fillSpaces(item));
   }
 
   getListType(list) {
