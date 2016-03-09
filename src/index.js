@@ -138,7 +138,7 @@ export class SharePoint {
   delete(resource) {
     const headers = {
       'X-HTTP-Method': 'DELETE',
-      'IF-MATCH': '*',
+      'IF-MATCH': '*'
     };
     this._axios.post(resource, {}, headers);
   }
