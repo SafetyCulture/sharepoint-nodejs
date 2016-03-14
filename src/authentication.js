@@ -24,7 +24,6 @@ const extractCookies = (headers) => {
   return cookies;
 };
 
-
 const buildRequest = (username, password, host) => {
   //Replace username, pwd and URL into SAML.xml
   let body = saml;
@@ -68,10 +67,19 @@ const getToken = ({ username, password, host }) => {
   };
 
   return rp.post({url: url, body: request, headers: headers}).then((resp) => {
+    console.info(`Token Response ${resp}`);
     let body = parser.toJson(resp, {object: true});
 
     let responseBody = body['S:Envelope']['S:Body'];
-    // let samlError = responseBody['S:Fault'];
+    let samlError = responseBody['S:Fault'];
+
+    if (typeof responseBody === 'undefined') {
+      return Promise.reject(`no response ${resp}`);
+    }
+
+    if (samlError) {
+      return Promise.reject(samlError);
+    }
 
     let token = responseBody['wst:RequestSecurityTokenResponse']['wst:RequestedSecurityToken']['wsse:BinarySecurityToken'].$t;
     return {token, domain};

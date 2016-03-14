@@ -1,9 +1,8 @@
 import { SharePoint, Authentication } from '../src/index';
-console.log(Authentication);
 
-const username = "";
-const password = "";
-const host = "";
+const username = process.env.SHAREPOINT_USERNAME;
+const password = process.env.SHAREPOINT_PASSWORD;
+const host = process.env.SHAREPOINT_URL;
 
 const authentication = Authentication({ username, password, host });
 
