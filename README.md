@@ -2,4 +2,4 @@
 
 SharePoint Node.js Module
 
-More documentation to come soon 
+See `example/index.js` for an initial example
