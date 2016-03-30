@@ -8,7 +8,6 @@ const AUTHORIZE_URL = `${LOGIN_URL}/oauth20_authorize.srf`;
 const TOKEN_URL = `${LOGIN_URL}/oauth20_token.srf`;
 
 export default function OAuth2({ clientId, clientSecret, redirectUri }) {
-
   return {
     clientId,
     clientSecret,
@@ -16,9 +15,9 @@ export default function OAuth2({ clientId, clientSecret, redirectUri }) {
 
     getAuthorizationUrl({ scope, state }) {
       let params = _.extend({
-        response_type : 'code',
-        client_id : this.clientId,
-        redirect_uri : this.redirectUri
+        response_type: 'code',
+        client_id: this.clientId,
+        redirect_uri: this.redirectUri
       }, { scope, state });
 
       return this.mergeUrl(AUTHORIZE_URL, params);
@@ -26,9 +25,9 @@ export default function OAuth2({ clientId, clientSecret, redirectUri }) {
 
     mergeUrl(baseUrl, params) {
       let components = url.parse(baseUrl);
-      params = _.extend(querystring.parse(components.query),
+      let merged = _.extend(querystring.parse(components.query),
                         params);
-      components.query = params;
+      components.query = merged;
       return url.format(components);
     },
 
@@ -57,11 +56,11 @@ export default function OAuth2({ clientId, clientSecret, redirectUri }) {
         uri: TOKEN_URL,
         body: querystring.stringify(params),
         headers: {
-          'content-type' : 'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         }
       }).then(function(response) {
         return JSON.parse(response);
       });
     }
   };
-};
+}
