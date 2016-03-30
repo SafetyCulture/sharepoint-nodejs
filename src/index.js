@@ -5,7 +5,7 @@ import rp from 'request-promise';
 
 import { listURI, fillSpaces } from './lists';
 import { Files } from './files';
-import { USER_AGENT } from './misc';
+import { USER_AGENT, formatResponse } from './misc';
 
 // re-export
 export { FIELD_TYPES } from './fields';
@@ -13,22 +13,6 @@ export { LIST_TEMPLATES, listURI, listType, fillSpaces } from './lists';
 export { Batch } from './batch';
 export { Authentication } from './authentication';
 
-/**
-* Formats a response to replace '_x0020_' with spaces.
-* @param {object} res Response to deep replace
-* @returns {object} Formatted response
-*/
-function formatResponse(res) {
-  return _.transform(res, (result, val, key) => {
-    let newVal = val;
-    const newKey = _.isString(key) ? key.replace(/_x0020_/g, ' ') : key;
-
-    if (_.isArray(val)) newVal = _.map(val, formatResponse);
-    if (_.isObject(val)) newVal = formatResponse(val);
-
-    result[newKey] = newVal;
-  });
-}
 
 /**
 * SharePoint class
@@ -57,12 +41,10 @@ export class SharePoint {
     instance.interceptors.request.use(config => {
       config.url = `${host}/_api/web${config.url}`;
       config.headers = _.assign({}, config.headers, {
-        'Cookie': `FedAuth=${auth.FedAuth};rtFa=${auth.rtFa};`,
-        'X-RequestDigest': auth.requestDigest,
         'Accept': 'application/json;odata=verbose',
         'User-Agent': USER_AGENT,
         'Content-Type': 'application/json;odata=verbose'
-      });
+      }, this.getAuthHeaders(auth));
 
       config.timeout = 360000;
 
@@ -77,6 +59,20 @@ export class SharePoint {
     });
 
     return instance;
+  }
+
+
+  /**
+   * Support either token (oauth2) or cookie based authentication
+   * to sharepoint API
+   */
+  getAuthHeaders(auth) {
+    if (auth.token !== undefined) {
+      return {'Authorization': `Bearer ${auth.token}`};
+    }
+
+    return {'Cookie': `FedAuth=${auth.FedAuth};rtFa=${auth.rtFa};`,
+              'X-RequestDigest': auth.requestDigest};
   }
 
   /**

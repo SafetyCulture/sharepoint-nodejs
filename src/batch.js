@@ -17,7 +17,8 @@ export class Batch {
     if (!host) throw new Error('Batch requires host string');
     if (!auth) throw new Error('Batch requires auth object');
 
-    this.host = host;
+    // remove trailing slash
+    this.host = host.replace(/\/$/, '');
     this.hostname = url.parse(host).hostname;
     this.batchBoundary = `batch_${uuid.v4()}`;
     this.requests = [];
