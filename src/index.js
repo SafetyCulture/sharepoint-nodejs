@@ -12,6 +12,7 @@ export { FIELD_TYPES } from './fields';
 export { LIST_TEMPLATES, listURI, listType, fillSpaces } from './lists';
 export { Batch } from './batch';
 export { Authentication } from './authentication';
+export { OAuth2 } from './oauth2';
 
 
 /**
