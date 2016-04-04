@@ -14,7 +14,6 @@ export { Batch } from './batch';
 export { Authentication } from './authentication';
 export { OAuth2 } from './oauth2';
 
-
 /**
 * SharePoint class
 * @param {string} host Host for SharePoint

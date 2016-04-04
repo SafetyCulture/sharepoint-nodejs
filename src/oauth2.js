@@ -7,7 +7,7 @@ const LOGIN_URL = 'https://login.live.com';
 const AUTHORIZE_URL = `${LOGIN_URL}/oauth20_authorize.srf`;
 const TOKEN_URL = `${LOGIN_URL}/oauth20_token.srf`;
 
-export default function OAuth2({ clientId, clientSecret, redirectUri }) {
+export function OAuth2({ clientId, clientSecret, redirectUri }) {
   return {
     clientId,
     clientSecret,
