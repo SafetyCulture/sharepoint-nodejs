@@ -18,3 +18,17 @@ export function formatResponse(res) {
     result[newKey] = newVal;
   });
 }
+
+/**
+ * Support either token (oauth2) or cookie based authentication
+ * to sharepoint API
+ */
+export function getAuthHeaders(auth) {
+  if (auth.token !== undefined) {
+    return {'Authorization': `Bearer ${auth.token}`};
+  }
+
+  return {'Cookie': `FedAuth=${auth.FedAuth};rtFa=${auth.rtFa};`,
+          'X-RequestDigest': auth.requestDigest};
+}
+

@@ -5,6 +5,7 @@ import uuid from 'node-uuid';
 import { parseString } from 'xml2js';
 
 import { LIST_TEMPLATES, listURI, fillSpaces } from './lists';
+import { getAuthHeaders } from './misc';
 
 /**
 * Batch class
@@ -34,12 +35,10 @@ export class Batch {
     const data = this.requests.join('\r\n');
 
     return axios.post(`${this.host}/_api/$batch`, data, {
-      headers: {
-        'X-RequestDigest': this.auth.requestDigest,
+      headers: _.assign({}, getAuthHeaders(this.auth), {
         'Accept': 'application/json;odata=verbose',
-        'Cookie': `FedAuth=${this.auth.FedAuth};rtFa=${this.auth.rtFa};`,
         'Content-Type': `multipart/mixed; boundary=${this.batchBoundary}`
-      },
+      }),
       timeout: 360000
     })
     .then(res => {

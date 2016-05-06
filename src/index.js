@@ -5,7 +5,7 @@ import rp from 'request-promise';
 
 import { listURI, fillSpaces } from './lists';
 import { Files } from './files';
-import { USER_AGENT, formatResponse } from './misc';
+import { USER_AGENT, formatResponse, getAuthHeaders } from './misc';
 
 // re-export
 export { FIELD_TYPES } from './fields';
@@ -44,7 +44,7 @@ export class SharePoint {
         'Accept': 'application/json;odata=verbose',
         'User-Agent': USER_AGENT,
         'Content-Type': 'application/json;odata=verbose'
-      }, this.getAuthHeaders(auth));
+      }, getAuthHeaders(auth));
 
       config.timeout = 360000;
 
@@ -61,19 +61,6 @@ export class SharePoint {
     return instance;
   }
 
-
-  /**
-   * Support either token (oauth2) or cookie based authentication
-   * to sharepoint API
-   */
-  getAuthHeaders(auth) {
-    if (auth.token !== undefined) {
-      return {'Authorization': `Bearer ${auth.token}`};
-    }
-
-    return {'Cookie': `FedAuth=${auth.FedAuth};rtFa=${auth.rtFa};`,
-              'X-RequestDigest': auth.requestDigest};
-  }
 
   /**
   * Link two fields together within SharePoint
@@ -110,14 +97,12 @@ export class SharePoint {
   }
 
   update(resource, body) {
-    let headers = {
-      'Cookie': `FedAuth=${this.auth.FedAuth};rtFa=${this.auth.rtFa};`,
-      'X-RequestDigest': this.auth.requestDigest,
+    let headers = _.merge(getAuthHeaders(this.auth), {
       'Accept': 'application/json;odata=verbose',
       'User-Agent': USER_AGENT,
       'IF-MATCH': '*',
       'X-HTTP-Method': 'MERGE',
-      'Content-Type': 'application/json;odata=verbose'};
+      'Content-Type': 'application/json;odata=verbose'});
 
     let options = {
       headers: headers,
