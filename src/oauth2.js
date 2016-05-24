@@ -7,11 +7,15 @@ const LOGIN_URL = 'https://login.live.com';
 const AUTHORIZE_URL = `${LOGIN_URL}/oauth20_authorize.srf`;
 const TOKEN_URL = `${LOGIN_URL}/oauth20_token.srf`;
 
-export function OAuth2({ clientId, clientSecret, redirectUri }) {
+export function OAuth2({ clientId, clientSecret, redirectUri, authorizeUri, tokenUri, realm, resource } = {authorizeUri: AUTHORIZE_URL, tokenUri: TOKEN_URL}) {
   return {
     clientId,
     clientSecret,
     redirectUri,
+    authorizeUri,
+    tokenUri,
+    realm,
+    resource,
 
     getAuthorizationUrl({ scope, state }) {
       let params = _.extend({
@@ -20,7 +24,7 @@ export function OAuth2({ clientId, clientSecret, redirectUri }) {
         redirect_uri: this.redirectUri
       }, { scope, state });
 
-      return this.mergeUrl(AUTHORIZE_URL, params);
+      return this.mergeUrl(authorizeUri, params);
     },
 
     mergeUrl(baseUrl, params) {
@@ -35,8 +39,9 @@ export function OAuth2({ clientId, clientSecret, redirectUri }) {
       return this.post({
         grant_type: 'refresh_token',
         refresh_token: refreshToken,
-        client_id: this.clientId,
-        client_secret: this.clientSecret
+        client_id: this.getClientId(),
+        client_secret: this.clientSecret,
+        resource: this.resource
       });
     },
 
@@ -44,16 +49,26 @@ export function OAuth2({ clientId, clientSecret, redirectUri }) {
       return this.post({
         grant_type: 'authorization_code',
         code: code,
-        client_id: this.clientId,
+        client_id: this.getClientId(),
         client_secret: this.clientSecret,
-        redirect_uri: this.redirectUri
+        redirect_uri: this.redirectUri,
+        resource: this.resource
       });
+    },
+
+    getClientId() {
+      if (this.realm) {
+        return `${this.clientId}@${this.realm}`;
+      }
+      else {
+        return this.clientId;
+      }
     },
 
     post(params) {
       return rp({
         method: 'POST',
-        uri: TOKEN_URL,
+        uri: tokenUri,
         body: querystring.stringify(params),
         headers: {
           'content-type': 'application/x-www-form-urlencoded'
