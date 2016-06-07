@@ -51,7 +51,7 @@ export function Files(api) {
 
       return readFile(fileLocation).then((data) => {
         let headers = {'content-length': data.length};
-        return api._axios.post(`${listURI(list)}/items({${itemId})/Files/Add(FileName='${fileName}', overwrite=true)`,
+        return api._axios.post(`${listURI(list)}/items(${itemId})/AttachmentFiles/add(FileName='${fileName}')`,
                                 data, {headers: headers});
       });
     }
