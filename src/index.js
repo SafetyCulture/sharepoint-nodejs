@@ -78,7 +78,7 @@ export class SharePoint {
         'Title': fieldName,
         'FieldTypeKind': 7,
         'LookupListId': lookupListId,
-        'LookupFieldName': lookupFieldName.replace(/ /g, '_x0020_')
+        'LookupFieldName': sharepointEscapeChars(lookupFieldName)
       }
     })
     .then(res => {

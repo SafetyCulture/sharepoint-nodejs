@@ -13,5 +13,6 @@ export const FIELD_TYPES = {
   BOOLEAN: 8,
   NUMBER: 9,
   CURRENCY: 10,
-  URL: 11
+  URL: 11,
+  GEOLOCATION: 31
 };
