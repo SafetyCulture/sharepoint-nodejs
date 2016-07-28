@@ -17,7 +17,7 @@ export const listURI = title => `/lists/GetByTitle('${title}')`;
 // http://www.blooberry.com/indexdot/html/topics/urlencoding.htm
 // https://abstractspaces.wordpress.com/2008/05/07/sharepoint-column-names-internal-name-mappings-for-non-alphabet/
 export const sharepointEscapeChars = (str) => {
-  return encodeURI(str.replace(/(\r\n|\n|\r|\\r\\n|\\r|\\n)/gm, '')) // strip newlines
+  return encodeURI(str.replace(/(\n|\r|\\r|\\n)/gm, '')) // strip newlines
           .replace(/(\%)([a-zA-Z0-9]{2})/g, '_x00$2_') // convert all unreserved
           .replace(/\$/g, '_x0024_')  // $
           .replace(/\-/g, '_x002d_')  // -
