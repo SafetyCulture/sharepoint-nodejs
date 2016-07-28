@@ -206,7 +206,7 @@ export class Batch {
     this.addChangeset(_.map(fields, (fieldType, field) =>
       this._change(this._create(`${listURI(title)}/fields`, {
         '__metadata': { 'type': 'SP.Field' },
-        'Title': field,
+        'Title': field.replace(/^(\n|\r|\\r|\\n)$/gm, '').replace(/(\n|\r|\\r|\\n)/gm, ' '),
         'FieldTypeKind': fieldType
       }))
     ));
