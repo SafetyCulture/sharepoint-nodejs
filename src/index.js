@@ -3,13 +3,13 @@ import querystring from 'querystring';
 import axios from 'axios';
 import rp from 'request-promise';
 
-import { listURI, fillSpaces } from './lists';
+import { listURI, fillSpaces, sharepointEscapeChars } from './lists';
 import { Files } from './files';
 import { USER_AGENT, formatResponse, getAuthHeaders } from './misc';
 
 // re-export
 export { FIELD_TYPES } from './fields';
-export { LIST_TEMPLATES, listURI, listType, fillSpaces } from './lists';
+export { LIST_TEMPLATES, listURI, listType, libraryType, fillSpaces, sharepointEscapeChars } from './lists';
 export { Batch } from './batch';
 export { Authentication } from './authentication';
 export { OAuth2 } from './oauth2';
@@ -78,7 +78,7 @@ export class SharePoint {
         'Title': fieldName,
         'FieldTypeKind': 7,
         'LookupListId': lookupListId,
-        'LookupFieldName': lookupFieldName.replace(/ /g, '_x0020_')
+        'LookupFieldName': sharepointEscapeChars(lookupFieldName)
       }
     })
     .then(res => {
@@ -158,5 +158,13 @@ export class SharePoint {
     const qs = querystring.stringify(query);
     return this._axios.get(`${listURI(list)}/items?${qs}`)
                       .then(res => res.data.d.results);
+  }
+
+  getDefaultView(list) {
+    return this._axios.get(`${listURI(list)}/DefaultView`);
+  }
+
+  addViewField(list, view, field) {
+    return this._axios.post(`${listURI(list)}/views(guid'${view}')/ViewFields/AddViewField('${sharepointEscapeChars(field)}')`);
   }
 }
