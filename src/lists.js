@@ -9,7 +9,7 @@ export const LIST_TEMPLATES = {
 export const listURI = title => `/lists/GetByTitle('${title}')`;
 
 // This function converts a string to the encoding style Sharepoint uses.
-// 1. Strips newlines and newline strings.
+// 1. Handles newlines and newline strings.
 // 2. URI/Percent encode the string.
 // 3. Using regex, replace all encoded symbol codes with the Sharepoint equivalent.
 // 4. Finish off by explicitly replacing safe URI symbols with Sharepoint codes.
@@ -17,26 +17,27 @@ export const listURI = title => `/lists/GetByTitle('${title}')`;
 // http://www.blooberry.com/indexdot/html/topics/urlencoding.htm
 // https://abstractspaces.wordpress.com/2008/05/07/sharepoint-column-names-internal-name-mappings-for-non-alphabet/
 export const sharepointEscapeChars = (str) => {
-  return encodeURI(str.replace(/(\n|\r|\\r|\\n)/gm, '')) // strip newlines
-          .replace(/(\%)([a-zA-Z0-9]{2})/g, '_x00$2_') // convert all unreserved
-          .replace(/\$/g, '_x0024_')  // $
-          .replace(/\-/g, '_x002d_')  // -
-          .replace(/\./g, '_x002e_')  // .
-          .replace(/\+/g, '_x002b_')  // +
-          .replace(/\!/g, '_x0021_')  // !
-          .replace(/\&/g, '_x0026_')  // &
-          .replace(/\)/g, '_x0029_')  // (
-          .replace(/\(/g, '_x0028_')  // )
-          .replace(/\?/g, '_x003f_')  // ?
-          .replace(/\=/g, '_x003d_')  // =
-          .replace(/\*/g, '_x002a_')  // *
-          .replace(/\,/g, '_x002c_')  // ,
-          .replace(/\//g, '_x002f_')  // /
-          .replace(/\'/g, '_x0027_')  // '
-          .replace(/\@/g, '_x0040_')  // @
-          .replace(/\:/g, '_x003a_')  // :
-          .replace(/\;/g, '_x003b_')  // ;
-          .replace(/\#/g, '_x0023_'); // #
+  // Strip leading/trailing newlines and replace others with whitespace
+  let result = encodeURI(str.replace(/^(\n|\r|\\r|\\n)$/gm, '').replace(/(\n|\r|\\r|\\n)/gm, ' '));
+  return result.replace(/(\%)([a-zA-Z0-9]{2})/g, '_x00$2_') // convert all unreserved
+               .replace(/\$/g, '_x0024_')  // $
+               .replace(/\-/g, '_x002d_')  // -
+               .replace(/\./g, '_x002e_')  // .
+               .replace(/\+/g, '_x002b_')  // +
+               .replace(/\!/g, '_x0021_')  // !
+               .replace(/\&/g, '_x0026_')  // &
+               .replace(/\)/g, '_x0029_')  // (
+               .replace(/\(/g, '_x0028_')  // )
+               .replace(/\?/g, '_x003f_')  // ?
+               .replace(/\=/g, '_x003d_')  // =
+               .replace(/\*/g, '_x002a_')  // *
+               .replace(/\,/g, '_x002c_')  // ,
+               .replace(/\//g, '_x002f_')  // /
+               .replace(/\'/g, '_x0027_')  // '
+               .replace(/\@/g, '_x0040_')  // @
+               .replace(/\:/g, '_x003a_')  // :
+               .replace(/\;/g, '_x003b_')  // ;
+               .replace(/\#/g, '_x0023_'); // #
 };
 
 export const listType = name => `SP.Data.${sharepointEscapeChars(name.charAt(0).toUpperCase() + name.slice(1))}ListItem`;
