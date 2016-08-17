@@ -1,5 +1,5 @@
 import querystring from 'querystring';
-import _ from 'lodash';
+import { extend } from 'lodash';
 import url from 'url';
 import rp from 'request-promise';
 
@@ -18,7 +18,7 @@ export function OAuth2({ clientId, clientSecret, redirectUri, authorizeUri, toke
     resource,
 
     getAuthorizationUrl({ scope, state }) {
-      let params = _.extend({
+      let params = extend({
         response_type: 'code',
         client_id: this.clientId,
         redirect_uri: this.redirectUri
@@ -29,7 +29,7 @@ export function OAuth2({ clientId, clientSecret, redirectUri, authorizeUri, toke
 
     mergeUrl(baseUrl, params) {
       let components = url.parse(baseUrl);
-      let merged = _.extend(querystring.parse(components.query),
+      let merged = extend(querystring.parse(components.query),
                         params);
       components.query = merged;
       return url.format(components);

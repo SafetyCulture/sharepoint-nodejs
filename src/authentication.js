@@ -1,7 +1,7 @@
 import fs from 'fs';
 import parser from 'xml2json';
 import rp from 'request-promise';
-import _ from 'lodash';
+import { each } from 'lodash';
 
 import { USER_AGENT } from './misc';
 
@@ -15,7 +15,7 @@ const getCustomerDomain = (host) => {
 
 const extractCookies = (headers) => {
   let cookies = {};
-  _.each(headers['set-cookie'], function(value) {
+  each(headers['set-cookie'], function(value) {
     let parsedCookies = value.split(/\=(.+)?/);
     parsedCookies[1] = parsedCookies[1].substr(0, parsedCookies[1].indexOf(';'));
     cookies[parsedCookies[0]] = parsedCookies[1];
