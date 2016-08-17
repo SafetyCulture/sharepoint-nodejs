@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { assign, map, merge } from 'lodash';
 import querystring from 'querystring';
 import axios from 'axios';
 import rp from 'request-promise';
@@ -9,7 +9,7 @@ import { USER_AGENT, formatResponse, getAuthHeaders } from './misc';
 
 // re-export
 export { FIELD_TYPES } from './fields';
-export { LIST_TEMPLATES, listURI, listType, libraryType, fillSpaces, sharepointEscapeChars } from './lists';
+export { LIST_TEMPLATES, STD_NEWLINE_REGEX, AFFIXED_NEWLINE_REGEX, listURI, listType, libraryType, fillSpaces, sharepointEscapeChars } from './lists';
 export { Batch } from './batch';
 export { Authentication } from './authentication';
 export { OAuth2 } from './oauth2';
@@ -40,7 +40,7 @@ export class SharePoint {
   _configureInterceptors(instance, { host, auth }) {
     instance.interceptors.request.use(config => {
       config.url = `${host}/_api/web${config.url}`;
-      config.headers = _.assign({}, config.headers, {
+      config.headers = assign({}, config.headers, {
         'Accept': 'application/json;odata=verbose',
         'User-Agent': USER_AGENT,
         'Content-Type': 'application/json;odata=verbose'
@@ -97,7 +97,7 @@ export class SharePoint {
   }
 
   update(resource, body) {
-    let headers = _.merge(getAuthHeaders(this.auth), {
+    let headers = merge(getAuthHeaders(this.auth), {
       'Accept': 'application/json;odata=verbose',
       'User-Agent': USER_AGENT,
       'IF-MATCH': '*',
@@ -151,7 +151,7 @@ export class SharePoint {
 
     if (where) {
       query.$filter =
-        _.map(fillSpaces(where), (value, field) => `${field} eq '${value}'`)
+        map(fillSpaces(where), (value, field) => `${field} eq '${value}'`)
         .join(' and ');
     }
 

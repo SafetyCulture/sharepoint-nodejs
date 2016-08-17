@@ -1,10 +1,10 @@
 import url from 'url';
-import _ from 'lodash';
+import { assign, map, identity } from 'lodash';
 import axios from 'axios';
 import uuid from 'node-uuid';
 import { parseString } from 'xml2js';
 
-import { LIST_TEMPLATES, listURI, fillSpaces } from './lists';
+import { LIST_TEMPLATES, STD_NEWLINE_REGEX, AFFIXED_NEWLINE_REGEX, listURI, fillSpaces } from './lists';
 import { getAuthHeaders } from './misc';
 
 /**
@@ -35,7 +35,7 @@ export class Batch {
     const data = this.requests.join('\r\n');
 
     return axios.post(`${this.host}/_api/$batch`, data, {
-      headers: _.assign({}, getAuthHeaders(this.auth), {
+      headers: assign({}, getAuthHeaders(this.auth), {
         'Accept': 'application/json;odata=verbose',
         'Content-Type': `multipart/mixed; boundary=${this.batchBoundary}`
       }),
@@ -60,7 +60,7 @@ export class Batch {
       .then(responses => {
         this.requests = [];
 
-        return responses.filter(_.identity);
+        return responses.filter(identity);
       });
     });
   }
@@ -72,7 +72,7 @@ export class Batch {
   addChangeset(changes) {
     const changesetBoundary = `changeset_${uuid.v4()}`;
     const changesBody =
-      _.map(changes, change => change(changesetBoundary)).join('\r\n');
+      map(changes, change => change(changesetBoundary)).join('\r\n');
 
     this.requests.push([
       `--${this.batchBoundary}`,
@@ -203,10 +203,10 @@ export class Batch {
       }))
     ]);
 
-    this.addChangeset(_.map(fields, (fieldType, field) =>
+    this.addChangeset(map(fields, (fieldType, field) =>
       this._change(this._create(`${listURI(title)}/fields`, {
         '__metadata': { 'type': 'SP.Field' },
-        'Title': field.replace(/^(\n|\r|\\r|\\n)$/gm, '').replace(/(\n|\r|\\r|\\n)/gm, ' '),
+        'Title': field.replace(AFFIXED_NEWLINE_REGEX, '').replace(STD_NEWLINE_REGEX, ' '),
         'FieldTypeKind': fieldType
       }))
     ));
