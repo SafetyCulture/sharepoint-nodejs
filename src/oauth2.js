@@ -1,13 +1,10 @@
 import querystring from 'querystring';
-import { extend } from 'lodash';
+import { extend, omit } from 'lodash';
 import url from 'url';
 import rp from 'request-promise';
+import {log} from './logger';
 
-const LOGIN_URL = 'https://login.live.com';
-const AUTHORIZE_URL = `${LOGIN_URL}/oauth20_authorize.srf`;
-const TOKEN_URL = `${LOGIN_URL}/oauth20_token.srf`;
-
-export function OAuth2({ clientId, clientSecret, redirectUri, authorizeUri, tokenUri, realm, resource } = {authorizeUri: AUTHORIZE_URL, tokenUri: TOKEN_URL}) {
+export function OAuth2({ clientId, clientSecret, redirectUri, authorizeUri, tokenUri, realm, resource }) {
   return {
     clientId,
     clientSecret,
@@ -57,15 +54,15 @@ export function OAuth2({ clientId, clientSecret, redirectUri, authorizeUri, toke
     },
 
     getClientId() {
-      if (this.realm) {
-        return `${this.clientId}@${this.realm}`;
-      }
-      else {
-        return this.clientId;
-      }
+      let id = this.realm ?
+          `${this.clientId}@${this.realm}` : this.clientId;
+      log.info(`Add-in full client ID = ${id} Realm = ${this.realm} Short client ID = ${this.clientId}`);
+      return id;
     },
 
     post(params) {
+      log.info(`POST to ${tokenUri} with ${querystring.stringify(omit(params, 'refresh_token'))}`);
+
       return rp({
         method: 'POST',
         uri: tokenUri,
@@ -73,9 +70,19 @@ export function OAuth2({ clientId, clientSecret, redirectUri, authorizeUri, toke
         headers: {
           'content-type': 'application/x-www-form-urlencoded'
         }
-      }).then(function(response) {
-        return JSON.parse(response);
+      }).then((response) => {
+        try {
+          return JSON.parse(response);
+        } catch (err) {
+          // In this case we do not expect sensitive info to be part of the response so ok to log it.
+          log.error(`Failed to deserialise POST response: ${response}`);
+          throw err;
+        }
+      }, (err) => {
+        log.error(`POST failed with ${err}`);
       });
+
+      // Should it .catch here or leave it to the caller?
     }
   };
 }

@@ -4,10 +4,12 @@ import nock from 'nock';
 const spAPIRewire = require('../src/index');
 const SharePoint = spAPIRewire.SharePoint;
 
+import { getAuthHeaders } from '../src/misc';
+
 import { listURI as title } from '../src/lists';
 import { format } from './utils';
 
-const host = 'https://ohaiprismatik.sharepoint.com/wut';
+const host = 'https://safetyculture.sharepoint.com/IntegrationAutomatedTestSite';
 const mockedAuth = { FedAuth: '123', rtFa: '123', requestDigest: '123' };
 
 describe('SharePoint-Mocked', function test() {
@@ -160,13 +162,13 @@ describe('SharePoint-Mocked', function test() {
   describe('getAuthHeaders', () => {
     const auth = {token: '1234'};
     it('should return Authorization header if token present', () => {
-      const sp = new SharePoint(host, auth);
-      expect(sp.getAuthHeaders(auth)).to.deep.equal({'Authorization': `Bearer ${auth.token}`});
+      //const sp = new SharePoint(host, auth);
+      expect(getAuthHeaders(auth)).to.deep.equal({'Authorization': `Bearer ${auth.token}`});
     });
 
     it('should return Cookie header if no token', () => {
-      const sp = new SharePoint(host, mockedAuth);
-      expect(sp.getAuthHeaders(mockedAuth)).to.deep.equal({'Cookie': 'FedAuth=123;rtFa=123;',
+      //const sp = new SharePoint(host, mockedAuth);
+      expect(getAuthHeaders(mockedAuth)).to.deep.equal({'Cookie': 'FedAuth=123;rtFa=123;',
                                                       'X-RequestDigest': '123'});
     });
   });

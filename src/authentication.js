@@ -15,7 +15,7 @@ const getCustomerDomain = (host) => {
 
 const extractCookies = (headers) => {
   let cookies = {};
-  each(headers['set-cookie'], function(value) {
+  each(headers['set-cookie'], (value) => {
     let parsedCookies = value.split(/\=(.+)?/);
     parsedCookies[1] = parsedCookies[1].substr(0, parsedCookies[1].indexOf(';'));
     cookies[parsedCookies[0]] = parsedCookies[1];

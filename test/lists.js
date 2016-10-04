@@ -5,14 +5,14 @@ import { listType } from '../src/lists.js';
 
 describe('Lists', function test() {
   describe('formats the name correctly', () => {
-    it('replace slash with nothing', () => {
-      expect(listType('Cats/Dogs')).to.be.equal('SP.Data.CatsDogsItem');
-      expect(listType('Cats-Dogs')).to.be.equal('SP.Data.CatsDogsItem');
-      expect(listType('Cats-Dogs/Birds')).to.be.equal('SP.Data.CatsDogsBirdsItem');
+    it('replaces slash with special SharePoint-escaped character', () => {
+      expect(listType('Cats/Dogs')).to.be.equal('SP.Data.Cats_x002f_DogsListItem');
+      expect(listType('Cats-Dogs')).to.be.equal('SP.Data.Cats_x002d_DogsListItem');
+      expect(listType('Cats-Dogs/Birds')).to.be.equal('SP.Data.Cats_x002d_Dogs_x002f_BirdsListItem');
     });
 
     it('replaces spaces with symbol', () => {
-      expect(listType('Cats Dogs')).to.be.equal('SP.Data.Cats_x0020_DogsItem');
+      expect(listType('Cats Dogs')).to.be.equal('SP.Data.Cats_x0020_DogsListItem');
     });
   });
 });

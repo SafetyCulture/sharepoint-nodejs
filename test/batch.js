@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import nock from 'nock';
 const spbAPIRewire = require('../src/batch');
 const Batch = spbAPIRewire.Batch;
-const host = 'https://ohaiprismatik.sharepoint.com/wut';
+const host = 'https://safetyculture.sharepoint.com/IntegrationAutomatedTestSite';
 const batchEndpoint = `/_api/$batch`;
 const mockedAuth = { FedAuth: '123', rtFa: '123', requestDigest: '123' };
 
@@ -81,7 +81,7 @@ describe('Batch-Mocked', function test() {
     describe('#run', () => {
       it('should batch requests and send to sharepoint', () => {
         const expectedResult =
-          `--batch_1\r\nContent-Type: multipart/mixed; boundary=changeset_1\r\nHost: ohaiprismatik.sharepoint.com\r\nContent-Length: 345\r\nContent-Transfer-Encoding: binary\r\n\r\n--changeset_1\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nPOST https://ohaiprismatik.sharepoint.com/wut/_api/web/lists HTTP/1.1\r\nContent-Type: application/json;odata=verbose\r\n\r\n{"__metadata":{"type":"SP.List"},"AllowContentTypes":true,"BaseTemplate":100,"ContentTypesEnabled":true,"Description":"test","Title":"test"}\r\n\r\n--changeset_1--\r\n\r\n--batch_1\r\nContent-Type: multipart/mixed; boundary=changeset_1\r\nHost: ohaiprismatik.sharepoint.com\r\nContent-Length: 298\r\nContent-Transfer-Encoding: binary\r\n\r\n--changeset_1\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nPOST https://ohaiprismatik.sharepoint.com/wut/_api/web/lists/GetByTitle('test')/fields HTTP/1.1\r\nContent-Type: application/json;odata=verbose\r\n\r\n{"__metadata":{"type":"SP.Field"},"Title":"test","FieldTypeKind":1}\r\n\r\n--changeset_1--\r\n\r\n--batch_1--`;
+          `--batch_1\r\nContent-Type: multipart/mixed; boundary=changeset_1\r\nHost: safetyculture.sharepoint.com\r\nContent-Length: 370\r\nContent-Transfer-Encoding: binary\r\n\r\n--changeset_1\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nPOST https://safetyculture.sharepoint.com/IntegrationAutomatedTestSite/_api/web/lists HTTP/1.1\r\nContent-Type: application/json;odata=verbose\r\n\r\n{"__metadata":{"type":"SP.List"},"AllowContentTypes":true,"BaseTemplate":100,"ContentTypesEnabled":true,"Description":"test","Title":"test"}\r\n\r\n--changeset_1--\r\n\r\n--batch_1\r\nContent-Type: multipart/mixed; boundary=changeset_1\r\nHost: safetyculture.sharepoint.com\r\nContent-Length: 323\r\nContent-Transfer-Encoding: binary\r\n\r\n--changeset_1\r\nContent-Type: application/http\r\nContent-Transfer-Encoding: binary\r\n\r\nPOST https://safetyculture.sharepoint.com/IntegrationAutomatedTestSite/_api/web/lists/GetByTitle('test')/fields HTTP/1.1\r\nContent-Type: application/json;odata=verbose\r\n\r\n{"__metadata":{"type":"SP.Field"},"Title":"test","FieldTypeKind":1}\r\n\r\n--changeset_1--\r\n\r\n--batch_1--`;
 
         sp.createList('test', 'test', { 'test': 1 });
 
@@ -219,7 +219,7 @@ describe('Batch-Mocked', function test() {
     describe('#_update', () => {
       it('should return an update change body', () => {
         const expected =
-        `PATCH https://ohaiprismatik.sharepoint.com/wut/_api/web/test HTTP/1.1\r\nContent-Type: application/json;odata=verbose\r\nAccept: application/json;odata=verbose\r\nIf-Match: "1"\r\n\r\n{"test":"test"}\r\n`;
+        `PATCH https://safetyculture.sharepoint.com/IntegrationAutomatedTestSite/_api/web/test HTTP/1.1\r\nContent-Type: application/json;odata=verbose\r\nAccept: application/json;odata=verbose\r\nIf-Match: "1"\r\n\r\n{"test":"test"}\r\n`;
 
         const result = sp._update('/test', {test: 'test'});
 
@@ -230,7 +230,7 @@ describe('Batch-Mocked', function test() {
     describe('#_delete', () => {
       it('should return an update change body', () => {
         const expected =
-        `DELETE https://ohaiprismatik.sharepoint.com/wut/_api/web/test HTTP/1.1\r\nIf-Match: *\r\n`;
+        `DELETE https://safetyculture.sharepoint.com/IntegrationAutomatedTestSite/_api/web/test HTTP/1.1\r\nIf-Match: *\r\n`;
 
         const result = sp._delete('/test');
 
