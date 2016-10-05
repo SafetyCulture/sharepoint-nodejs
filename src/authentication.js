@@ -67,7 +67,6 @@ const getToken = ({ username, password, host }) => {
   };
 
   return rp.post({url: url, body: request, headers: headers}).then((resp) => {
-    console.info(`Token Response ${resp}`);
     let body = parser.toJson(resp, {object: true});
 
     let responseBody = body['S:Envelope']['S:Body'];
