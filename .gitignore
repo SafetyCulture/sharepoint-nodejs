@@ -31,3 +31,6 @@ tmp
 .lock-wscript
 
 .idea/
+
+# Babel-generated code
+/lib
