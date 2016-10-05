@@ -1,15 +1,17 @@
-import { expect } from 'chai';
+import {expect} from 'chai';
 import {OAuth2} from '../src/oauth2';
+import log from './mocks/logger';
 
 describe('OAuth2', function test() {
   describe('when configured', () => {
     // This should fail when some required parameters are missing e.g. tokenUri
-    it('with some parameters', () => {
+    it('should be configured with only some parameters provided', () => {
       const authentication = OAuth2({
         clientId: 'test_client_id',
         clientSecret: 'test_client_secret',
         redirectUri: 'http://localhost',
-        authorizeUri: 'http://localhost'
+        authorizeUri: 'http://localhost',
+        log
       });
 
       expect(authentication).to.be.a('object');
@@ -25,12 +27,16 @@ describe('OAuth2', function test() {
         redirectUri: 'http://localhost',
         authorizeUri: 'http://localhost',
         realm: 'test_realm',
-        resource: 'test_resource'
+        resource: 'test_resource',
+        log
       });
 
-      authentication.requestToken('123').then((result) => {
-        expect(result).to.be.undefined;
-      });
+      return authentication.requestToken('123')
+        .then(() => {
+          throw new Error('Must never reach here');
+        }, (err) => {
+          expect(err.toString()).to.contain('options.uri is a required argument');
+        });
     });
   });
 });

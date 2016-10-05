@@ -1,10 +1,10 @@
 import querystring from 'querystring';
-import { extend, omit } from 'lodash';
+import {extend, omit} from 'lodash';
 import url from 'url';
 import rp from 'request-promise';
-import {log} from './logger';
+import {log as log_} from './logger';
 
-export function OAuth2({ clientId, clientSecret, redirectUri, authorizeUri, tokenUri, realm, resource }) {
+export function OAuth2({clientId, clientSecret, redirectUri, authorizeUri, tokenUri, realm, resource, log = log_}) {
   return {
     clientId,
     clientSecret,
@@ -14,12 +14,12 @@ export function OAuth2({ clientId, clientSecret, redirectUri, authorizeUri, toke
     realm,
     resource,
 
-    getAuthorizationUrl({ scope, state }) {
+    getAuthorizationUrl({scope, state}) {
       let params = extend({
         response_type: 'code',
         client_id: this.clientId,
         redirect_uri: this.redirectUri
-      }, { scope, state });
+      }, {scope, state});
 
       return this.mergeUrl(authorizeUri, params);
     },
@@ -27,7 +27,7 @@ export function OAuth2({ clientId, clientSecret, redirectUri, authorizeUri, toke
     mergeUrl(baseUrl, params) {
       let components = url.parse(baseUrl);
       let merged = extend(querystring.parse(components.query),
-                        params);
+        params);
       components.query = merged;
       return url.format(components);
     },
@@ -55,7 +55,7 @@ export function OAuth2({ clientId, clientSecret, redirectUri, authorizeUri, toke
 
     getClientId() {
       let id = this.realm ?
-          `${this.clientId}@${this.realm}` : this.clientId;
+        `${this.clientId}@${this.realm}` : this.clientId;
       log.info(`Add-in full client ID = ${id} Realm = ${this.realm} Short client ID = ${this.clientId}`);
       return id;
     },
@@ -70,6 +70,9 @@ export function OAuth2({ clientId, clientSecret, redirectUri, authorizeUri, toke
         headers: {
           'content-type': 'application/x-www-form-urlencoded'
         }
+      }).catch((err) => {
+        log.error(`POST failed with ${err}`);
+        throw err;
       }).then((response) => {
         try {
           return JSON.parse(response);
@@ -78,11 +81,7 @@ export function OAuth2({ clientId, clientSecret, redirectUri, authorizeUri, toke
           log.error(`Failed to deserialise POST response: ${response}`);
           throw err;
         }
-      }, (err) => {
-        log.error(`POST failed with ${err}`);
       });
-
-      // Should it .catch here or leave it to the caller?
     }
   };
 }
