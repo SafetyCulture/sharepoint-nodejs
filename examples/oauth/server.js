@@ -13,7 +13,6 @@ const oauth = SharePoint.OAuth2({
 
 app.get(`/`, (req, res) => {
   const code = req.param.code;
-  console.log(`Code = ${code}`)
 
   oauth.requestToken(code).then((response) => {
     console.log(response.access_token);
@@ -27,7 +26,4 @@ app.get(`/request`, (req, res) => {
   res.redirect(url);
 });
 
-app.listen(3500, () => {
-  console.log('Running...');
-  console.log(`${oauth.clientId} ${oauth.clientSecret} ${oauth.redirectUri}`);
-});
+app.listen(3000);

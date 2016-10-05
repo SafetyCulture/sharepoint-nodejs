@@ -162,12 +162,10 @@ describe('SharePoint-Mocked', function test() {
   describe('getAuthHeaders', () => {
     const auth = {token: '1234'};
     it('should return Authorization header if token present', () => {
-      //const sp = new SharePoint(host, auth);
       expect(getAuthHeaders(auth)).to.deep.equal({'Authorization': `Bearer ${auth.token}`});
     });
 
     it('should return Cookie header if no token', () => {
-      //const sp = new SharePoint(host, mockedAuth);
       expect(getAuthHeaders(mockedAuth)).to.deep.equal({'Cookie': 'FedAuth=123;rtFa=123;',
                                                       'X-RequestDigest': '123'});
     });

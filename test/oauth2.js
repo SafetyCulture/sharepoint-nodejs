@@ -4,7 +4,6 @@ import log from './mocks/logger';
 
 describe('OAuth2', function test() {
   describe('when configured', () => {
-    // This should fail when some required parameters are missing e.g. tokenUri
     it('should be configured with only some parameters provided', () => {
       const authentication = OAuth2({
         clientId: 'test_client_id',
