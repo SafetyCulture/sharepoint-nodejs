@@ -29,3 +29,8 @@ tmp
 
 # Users Environment Variables
 .lock-wscript
+
+.idea/
+
+# Babel-generated code
+/lib

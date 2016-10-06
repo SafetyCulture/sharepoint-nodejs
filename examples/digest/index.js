@@ -1,4 +1,4 @@
-import { SharePoint, Batch, Authentication } from '../src/index';
+import { Batch, Authentication } from '../../src/index';
 
 const username = process.env.SHAREPOINT_USERNAME;
 const password = process.env.SHAREPOINT_PASSWORD;

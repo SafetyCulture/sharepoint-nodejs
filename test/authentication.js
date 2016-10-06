@@ -1,8 +1,8 @@
 import { expect } from 'chai';
-// import nock from 'nock';
+
 const authenticationRewire = require('../src/authentication');
 const Authentication = authenticationRewire.Authentication;
-const host = 'https://ohaiprismatik.sharepoint.com/wut';
+const host = 'https://safetyculture.sharepoint.com/IntegrationAutomatedTestSite';
 
 describe('Authentication', function test() {
   this.timeout(40000);
