@@ -1,6 +1,6 @@
 {
   "name": "@safetyculture/sharepoint",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "SharePoint client library",
   "main": "lib/index.js",
   "scripts": {
