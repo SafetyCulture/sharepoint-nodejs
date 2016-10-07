@@ -1,0 +1,6 @@
+/.babelrc
+/.editorconfig
+/.eslintrc
+/.gitignore
+/.npmignore
+/coverage/
