@@ -9,7 +9,7 @@
     "test": "npm run lint && BABEL_ENV=TEST mocha --compilers js:babel-core/register",
     "coverage": "BABEL_ENV=TEST babel-node node_modules/isparta/bin/isparta cover --report text --report html node_modules/mocha/bin/_mocha -- --reporter dot",
     "compile": "babel --presets es2015 -d lib/ src/",
-    "prepublish": "npm run compile"
+    "prepublish": "npm run compile && npm test"
   },
   "repository": {
     "type": "git",
