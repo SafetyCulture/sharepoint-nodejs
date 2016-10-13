@@ -1,8 +1,21 @@
 import querystring from 'querystring';
-import {extend, omit} from 'lodash';
+import {extend, contains, forOwn} from 'lodash';
 import url from 'url';
 import rp from 'request-promise';
 import {log as log_} from './logger';
+
+export const asStringWithoutSensitiveFields = (queryStringObject) => {
+  const overwriteWith = 'omitted';
+  const sensitiveFields = ['refresh_token', 'client_secret', 'code'];
+
+  let sanitisedQueryString = {};
+
+  forOwn(queryStringObject, (value, key) => {
+    sanitisedQueryString[key] = contains(sensitiveFields, key) ? overwriteWith : value;
+  });
+
+  return querystring.stringify(sanitisedQueryString);
+};
 
 export function OAuth2({clientId, clientSecret, redirectUri, authorizeUri, tokenUri, realm, resource, log = log_}) {
   return {
@@ -61,7 +74,7 @@ export function OAuth2({clientId, clientSecret, redirectUri, authorizeUri, token
     },
 
     post(params) {
-      log.info(`POST to ${tokenUri} with ${querystring.stringify(omit(params, 'refresh_token'))}`);
+      log.info(`POST to ${tokenUri} with ${asStringWithoutSensitiveFields(params)}`);
 
       return rp({
         method: 'POST',
