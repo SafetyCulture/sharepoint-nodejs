@@ -3,7 +3,7 @@ import querystring from 'querystring';
 import axios from 'axios';
 import rp from 'request-promise';
 
-import { listURI, fillSpaces, sharepointEscapeChars } from './lists';
+import { listURI, listGuidUri, fillSpaces, sharepointEscapeChars } from './lists';
 import { Files } from './files';
 import { USER_AGENT, formatResponse, getAuthHeaders } from './misc';
 
@@ -166,5 +166,40 @@ export class SharePoint {
 
   addViewField(list, view, field) {
     return this._axios.post(`${listURI(list)}/views(guid'${view}')/ViewFields/AddViewField('${sharepointEscapeChars(field)}')`);
+  }
+
+  /**
+  * Get the Root Folder of a Document Library
+  * @param {string} guid The unique guid of the Document Library
+  * @returns {Promise} Resolves with Root Folder data on success, rejects with error from SP
+  */
+  getRootFolder(guid) {
+    return this._axios.get(`${listGuidUri(guid)}/RootFolder`);
+  }
+
+  /**
+  * Get the subfolders of a Document Library or Parent Folder
+  * @param {string} serverRelativeUrl The Server Relative URL of the parent Document Library or Folder
+  * @returns {Promise} Resolves with an Array of Folder data on success, rejects with error from SP
+  */
+  getFolders(serverRelativeUrl) {
+    const encodedRelativeUrl = encodeURI(serverRelativeUrl);
+    return this._axios.get(`/GetFolderByServerRelativeUrl('${encodedRelativeUrl}')/Folders`);
+  }
+
+  /**
+  * Creates a folder within a Document Library
+  * @param {string} folderName The name of the folder to create
+  * @param {string} libraryRelativeUrl The Server Relative URL of the parent Document Library
+  * @returns {Promise} Resolves with new Folder data on success, rejects with error from SP
+  */
+  createFolder(folderName, libraryRelativeUrl) {
+    const body = {
+      '__metadata': {
+        'type': 'SP.Folder'
+      },
+      'ServerRelativeUrl': `${libraryRelativeUrl}/${folderName}`
+    };
+    return this._axios.post(`/Folders`, body);
   }
 }

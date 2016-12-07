@@ -7,9 +7,10 @@ export const LIST_TEMPLATES = {
   LIBRARY: 101
 };
 
-// String builder for list URIS
-// Title must be URI Encoded and Apostrophes must be duplicated to avoid errors
+// String builders for list URIS
+// List title must be URI Encoded and Apostrophes must be duplicated to avoid errors
 export const listURI = title => `/lists/GetByTitle('${encodeURI(title).replace(/\'/g, "''")}')`;
+export const listGuidUri = guid => `/Lists(guid'${guid}')`;
 
 // This function converts a string to the encoding style Sharepoint uses.
 // 1. Handles newlines and newline strings.
